@@ -7,22 +7,3 @@ ALTER COLUMN gender SET NOT NULL ;
 ALTER TABLE employee
 DROP COLUMN gender;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
