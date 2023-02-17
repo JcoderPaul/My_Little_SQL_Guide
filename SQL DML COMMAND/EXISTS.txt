@@ -1,0 +1,113 @@
+****** SQL условие EXISTS ******
+
+SQL условие EXISTS используется в сочетании с подзапросом и считается 
+выполненным, если подзапрос возвращает хотя бы одну строку. Его можно 
+использовать в операторе SELECT, INSERT, UPDATE или DELETE.
+
+Синтаксис условия EXISTS в SQL:
+
+**********************************************************************
+WHERE EXISTS ( subquery );
+**********************************************************************
+
+Параметры:
+- subquery - подзапрос является оператором SELECT. Если subquery возвращает 
+             хотя бы одну запись в своем наборе результатов, предложение 
+             EXISTS оценивается как true и условие EXISTS будет выполнено. 
+             Если subquery не возвращает никаких записей, предложение EXISTS 
+             оценивается как false, и условие EXISTS не будет выполнено.
+
+!!! ВНИМАНИЕ !!!
+Операторы SQL, использующие условие EXISTS, очень неэффективны, поскольку 
+подзапрос повторно запускается для КАЖДОЙ строки в таблице внешнего запроса. 
+Есть более эффективные способы написания большинства запросов, которые не 
+используют условие EXISTS.
+!!! ВНИМАНИЕ !!!
+
+****** Использование условия EXISTS с оператором SELECT ******
+
+У нас есть таблица customers со следующими полями: customer_id, first_name, 
+                                                   last_name, favorite_website.
+И таблица orders с полями: order_id, customer_id, order_date.
+
+Найдем все записи из таблицы customers, где есть хотя бы одна запись в таблице 
+orders с тем же customer_id. 
+
+Формируем SELECT запрос:
+
+**********************************************************************
+SELECT *
+FROM customers
+WHERE EXISTS 
+   (SELECT *
+    FROM orders
+    WHERE customers.customer_id = orders.customer_id);
+**********************************************************************
+
+В этом примере в если в таблице customers есть записи, у которых значение 
+customer_id имеется в таблице orders, они будут выведены на экран (получены).
+
+****** Использование EXISTS с оператором UPDATE ******
+
+У нас есть таблица products со следующими полями: product_id, product_name, 
+                                                  category_id.
+И таблица с именем summary_data с полями: product_id, current_category.
+Обновим таблицу summary_data значениями из таблицы products. 
+
+Формируем SQL запрос:
+
+**********************************************************************
+UPDATE summary_data
+SET current_category = (SELECT category_id
+                        FROM products
+                        WHERE products.product_id = summary_data.product_id)
+WHERE EXISTS (SELECT category_id
+              FROM products
+              WHERE products.product_id = summary_data.product_id);
+**********************************************************************
+
+В данном случае будет обновлено поле current_category в таблице summary_data 
+данными category_id из таблицы products, где значения product_id совпадают. 
+
+****** Использование условия EXISTS с оператором DELETE ******
+
+У нас есть таблица customer со следующими полями: customer_id, first_name,
+                                                  last_name, favorite_website.
+И таблица orders с полями: order_id, customer_id, order_date.
+
+Формируем запрос с DELETE:
+
+**********************************************************************
+DELETE FROM orders
+WHERE EXISTS
+     (SELECT *
+      FROM customers
+      WHERE customers.customer_id = orders.customer_id
+      AND customers.last_name = 'Bieber');
+**********************************************************************
+
+В данном случае удаляются все записи из таблицы orders, где в таблице customer 
+есть запись с last_name «Bieber» и совпадающим значением customer_id в обеих 
+таблицах. 
+
+****** Использование NOT с условием EXISTS ******
+
+Условие NOT можно объединить с условием EXISTS, чтобы создать условие NOT EXISTS. 
+
+Допустим, у нас есть таблица customers с полями: customer_id, first_name,
+                                                 last_name, favorite_website.
+И таблица orders с полями: order_id, customer_id, order_date.
+
+Формируем следующий SQL запрос:
+
+**********************************************************************
+SELECT *
+FROM customers
+WHERE NOT EXISTS
+    (SELECT * 
+     FROM orders
+     WHERE customers.customer_id = orders.customer_id);
+**********************************************************************
+
+В данном случае будут возвращены все записи из таблицы customers, где нет записей 
+в таблице orders для данного customer_id.

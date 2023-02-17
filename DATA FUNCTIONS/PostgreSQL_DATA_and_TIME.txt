@@ -1,0 +1,16 @@
+****** Дата / время функции PostgreSQL ******
+
+AGE- Функция age PostgreSQL возвращает количество лет, месяцев и дней между 
+     двумя датами.
+CURRENT_DATE - Функция current_date в PostgreSQL возвращает текущую дату.
+CURRENT_TIME - Функция current_time в PostgreSQL возвращает текущее время 
+               с часовым поясом.
+CURRENT_TIMESTAMP - Функция current_timestamp PostgreSQL возвращает текущую 
+                    дату и время с часовым поясом.
+DATE_PART - Функция date_part PostgreSQL извлекает части из даты.
+EXTRACT - Функция extract PostgreSQL извлекает части из даты.
+LOCALTIME - Функция localtime PostgreSQL возвращает текущее время.
+LOCALTIMESTAMP - Функция localtimestamp PostgreSQL возвращает текущую 
+                 дату и время.
+NOW - Функция now PostgreSQL возвращает текущую дату и время с часовым 
+      поясом.
