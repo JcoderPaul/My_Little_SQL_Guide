@@ -1,42 +1,42 @@
-****** MySQL функция COALESCE ******
+### MySQL функция COALESCE
 
 MySQL функция COALESCE возвращает первое ненулевое выражение в списке.
 
 Синтаксис MySQL функции COALESCE:
 
-*************************************************************************
-COALESCE( expression1, expression2, ... expression_n )
-*************************************************************************
+    COALESCE( expression1, expression2, ... expression_n )
 
 Параметры:
 - expression1, expression2, ... expression_n - выражения для проверки 
                                                ненулевых значений.
-!!! ВНИМАНИЕ !!!
+
+---
+**!!! ВНИМАНИЕ !!!**
 Если все выражения будут иметь значение null, функция COALESCE вернет 
 значение null.
 
 Функция COALESCE может использоваться в следующих версиях MySQL:
 MySQL 5.7, MySQL 5.6, MySQL 5.5, MySQL 5.1, MySQL 5.0, MySQL 4.1, MySQL 4.0, MySQL 3.23
-!!! ВНИМАНИЕ !!!
 
-Например см. в COALESCE.SQL:
+---
+Например см. в [COALESCE.SQL](./MySql/COALESCE.sql):
 
-mysql> SELECT COALESCE('A', 'B', null, 'C', 'D');
+    SELECT COALESCE('A', 'B', null, 'C', 'D');
 
-#Результат:  A                                  
+**Результат:  A**                                  
 
-mysql> SELECT COALESCE(null, null, null, 'A', 'B');
+    SELECT COALESCE(null, null, null, 'A', 'B');
 
-#Результат:  A                                    
+**Результат:  A**
 
-mysql> SELECT COALESCE(null, 1, 2, 3, null, 4);
+    SELECT COALESCE(null, 1, 2, 3, null, 4);
 
-#Результат:  1 
+**Результат:  1**
 
-mysql> SELECT COALESCE(null, 'May 1945', 'Apr 1961');
+    SELECT COALESCE(null, 'May 1945', 'Apr 1961');
 
-#Результат:  May 1945                               
+**Результат:  May 1945**
 
-mysql> SELECT COALESCE(null, null, null, null, null);
+    SELECT COALESCE(null, null, null, null, null);
 
-#Результат:  NULL
+**Результат:  NULL**
