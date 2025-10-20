@@ -19,7 +19,7 @@ MySQL функция COALESCE возвращает первое ненулево
 MySQL 5.7, MySQL 5.6, MySQL 5.5, MySQL 5.1, MySQL 5.0, MySQL 4.1, MySQL 4.0, MySQL 3.23
 
 ---
-Например см. в [COALESCE.SQL](/MySql/COALESCE.sql):
+Например см. в [COALESCE.SQL](./MySQL/COALESCE.sql):
 
     SELECT COALESCE('A', 'B', null, 'C', 'D');
 
