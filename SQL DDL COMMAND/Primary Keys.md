@@ -1,4 +1,4 @@
-****** SQL Primary Keys ******
+### SQL Primary Keys
 
 В SQL первичный ключ - это отдельное поле или комбинация полей, которые однозначно 
 определяют запись. Ни одно из полей, являющихся частью первичного ключа, не может 
@@ -9,44 +9,28 @@
 Вы можете использовать оператор CREATE TABLE или оператор ALTER TABLE для создания 
 первичного ключа в SQL.
 
-****** Создать первичный ключ (оператор CREATE TABLE) ******
+---
+### Создать первичный ключ (оператор CREATE TABLE)
 
 Первичный ключ может быть создан при выполнении оператора CREATE TABLE в SQL.
 Синтаксис для создания первичного ключа с помощью оператора CREATE TABLE в SQL.
 
-********************************************************************************************
-CREATE TABLE table_name
-
-(
-
-  column1 datatype [ NULL | NOT NULL ],
-
-  column2 datatype [ NULL | NOT NULL ],
-
-  ...
-
-  CONSTRAINT constraint_name PRIMARY KEY (pk_col1, pk_col2, ... pk_col_n)
-
-);
-
-********************************************************************************************
+    CREATE TABLE table_name
+    (
+      column1 datatype [ NULL | NOT NULL ],
+      column2 datatype [ NULL | NOT NULL ],
+      ...
+      CONSTRAINT constraint_name PRIMARY KEY (pk_col1, pk_col2, ... pk_col_n)
+    );
 
 Или
 
-********************************************************************************************
-CREATE TABLE table_name
-
-(
-
-  column1 datatype CONSTRAINT constraint_name PRIMARY KEY,
-
-  column2 datatype [ NULL | NOT NULL ],
-
-  ...
-
-);
-
-********************************************************************************************
+    CREATE TABLE table_name
+    (
+      column1 datatype CONSTRAINT constraint_name PRIMARY KEY,
+      column2 datatype [ NULL | NOT NULL ],
+      ...
+    );
 
 Параметры:
 - table_name - Имя таблицы, которую вы хотите создать;
@@ -54,31 +38,28 @@ CREATE TABLE table_name
 - constraint_name - Название первичного ключа;
 - pk_col1, pk_col2, ... pk_col_n - Столбцы, составляющие первичный ключ.
 
-Как создать первичный ключ с помощью оператора CREATE TABLE в SQL. 
+---
+### Как создать первичный ключ с помощью оператора CREATE TABLE в SQL. 
 Наш первичный ключ состоит всего из одного столбца.
 
 Пример в PgSQL:
 
-********************************************************************************************
-CREATE TABLE suppliers
-( supplier_id int NOT NULL,
-  supplier_name char(50) NOT NULL,
-  contact_name char(50),
-  CONSTRAINT suppliers_pk PRIMARY KEY (supplier_id)
-);
-********************************************************************************************
+    CREATE TABLE suppliers
+    ( supplier_id int NOT NULL,
+      supplier_name char(50) NOT NULL,
+      contact_name char(50),
+      CONSTRAINT suppliers_pk PRIMARY KEY (supplier_id)
+    );
 
 В этом примере мы создали первичный ключ для таблицы suppliers, который называется sources_pk. 
 Он состоит только из одного столбца - столбца supplier_id. Мы могли бы использовать альтернативный 
 синтаксис и создать этот же первичный ключ следующим образом.
 
-********************************************************************************************
-CREATE TABLE suppliers
-( supplier_id int CONSTRAINT suppliers_pk PRIMARY KEY,
-  supplier_name char(50) NOT NULL,
-  contact_name char(50)
-);
-********************************************************************************************
+    CREATE TABLE suppliers
+    ( supplier_id int CONSTRAINT suppliers_pk PRIMARY KEY,
+      supplier_name char(50) NOT NULL,
+      contact_name char(50)
+    );
 
 Оба эти синтаксиса действительны при создании первичного ключа только с одним полем. Если вы 
 создаете первичный ключ, который состоит из 2-х или более столбцов, вы ограничены использованием 
@@ -86,32 +67,28 @@ CREATE TABLE suppliers
 
 Пример в PgSQL:
 
-********************************************************************************************
-CREATE TABLE contacts
-( last_name VARCHAR(30) NOT NULL,
-  first_name VARCHAR(25) NOT NULL,
-  birthday DATE,
-  CONSTRAINT contacts_pk PRIMARY KEY (last_name, first_name)
-);
-********************************************************************************************
+    CREATE TABLE contacts
+    ( last_name VARCHAR(30) NOT NULL,
+      first_name VARCHAR(25) NOT NULL,
+      birthday DATE,
+      CONSTRAINT contacts_pk PRIMARY KEY (last_name, first_name)
+    );
 
 Этот пример создает первичный ключ с именем contacts_pk, который состоит из комбинации столбцов 
 last_name и first_name. Поэтому каждая комбинация last_name и first_name должна быть уникальной 
 в таблице contacts.
 
-****** Создание первичного ключа (оператор ALTER TABLE) ******
+---
+### Создание первичного ключа (оператор ALTER TABLE)
 
 Если ваша таблица уже существует и вы хотите добавить к ней позже первичный ключ, вы можете 
 использовать оператор ALTER TABLE для создания первичного ключа.
+
 Синтаксис для создания первичного ключа с помощью оператора ALTER TABLE в SQL:
 
-********************************************************************************************
-ALTER TABLE table_name
-
-    ADD CONSTRAINT constraint_name
-
+    ALTER TABLE table_name
+      ADD CONSTRAINT constraint_name
         PRIMARY KEY (column1, column2, ... column_n);
-********************************************************************************************
 
 Параметры: 
 - table_name - имя таблицы для изменения. Это таблица, к которой вы хотите добавить первичный ключ;
@@ -122,49 +99,37 @@ ALTER TABLE table_name
 suppliers, созданная в нашей базе данных. Мы могли бы добавить первичный ключ к таблице suppliers 
 с помощью следующего оператора ALTER TABLE в PgSQL:
 
-
-********************************************************************************************
-ALTER TABLE suppliers
-  ADD CONSTRAINT suppliers_pk 
-      PRIMARY KEY (supplier_id);
-*******************************************************************************************
+    ALTER TABLE suppliers
+      ADD CONSTRAINT suppliers_pk 
+        PRIMARY KEY (supplier_id);
 
 В этом примере мы создали первичный ключ для существующей таблицы suppliers, который называется 
 sources_pk. Он состоит из столбца supplier_id. Мы также могли бы создать первичный ключ с более 
 чем одним полем, как показано ниже.
 
-********************************************************************************************
-ALTER TABLE suppliers
-  ADD CONSTRAINT suppliers_pk
-      PRIMARY KEY (supplier_id, supplier_name);
-
-********************************************************************************************
+    ALTER TABLE suppliers
+      ADD CONSTRAINT suppliers_pk
+          PRIMARY KEY (supplier_id, supplier_name);
 
 Этот пример создал бы первичный ключ с именем supplier_pk, который состоит из комбинации столбцов 
 supplier_id и supplier_name.
 
-****** Удалить первичный ключ ******
+---
+### Удалить первичный ключ
 
 В SQL вы можете удалить первичный ключ, используя оператор ALTER TABLE.
 Синтаксис для удаления первичного ключа в SQL:
 
-
-********************************************************************************************
-ALTER TABLE table_name
-
-  DROP PRIMARY KEY;
-********************************************************************************************
+    ALTER TABLE table_name
+    DROP PRIMARY KEY;
 
 Параметры:
 - table_name - имя таблицы для изменения. Это таблица, первичный ключ которой вы хотите удалить
 
 Пример, как удалять первичный ключ с помощью оператора ALTER TABLE в PgSQL:
 
-
-********************************************************************************************
-ALTER TABLE suppliers
-  DROP PRIMARY KEY;
-********************************************************************************************
+    ALTER TABLE suppliers
+    DROP PRIMARY KEY;
 
 В этом примере мы удалили первичный ключ из таблицы suppliers. Нам не нужно указывать имя первичного 
 ключа, поскольку в таблице может быть только один первичный ключ.
