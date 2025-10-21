@@ -1,18 +1,15 @@
+### VIEW (ПРЕДСТАВЛЕНИЕ)
+
 В MySQL VIEW (представление или вью) не является физической таблицей, а представляет 
 собой виртуальную таблицу, созданную запросом, соединяющим одну или несколько таблиц.
 
-Создать VIEW
+**Создать VIEW:**
 Синтаксис для оператора CREATE VIEW в MySQL:
 
-*****************************************************************************************************
-CREATE [OR REPLACE] VIEW view_name AS
-
-SELECT columns
-
-FROM tables
-
-[WHERE conditions];
-*****************************************************************************************************
+    CREATE [OR REPLACE] VIEW view_name AS
+    SELECT columns
+    FROM tables
+      [WHERE conditions];
 
 Параметры или аргументы:
 - OR REPLACE - необязательный. Если мы не укажем этот атрибут и 
@@ -23,56 +20,46 @@ FROM tables
 
 Ниже приведен пример использования оператора CREATE VIEW для создания представления в MySQL:
 
-
-*****************************************************************************************************
-MySQL
-CREATE VIEW hardware_suppliers AS
-SELECT supplier_id, supplier_name
-FROM suppliers
-WHERE category_type = 'Hardware';
-*****************************************************************************************************
+    MySQL
+    CREATE VIEW hardware_suppliers AS
+    SELECT supplier_id, supplier_name
+    FROM suppliers
+    WHERE category_type = 'Hardware';
 
 Этот пример CREATE VIEW создаст виртуальную таблицу hardware_suppliers на основе набора 
 результатов оператора SELECT. Теперь мы можем запросить данные MySQL VIEW следующим образом:
 
-*****************************************************************************************************
-SELECT *
-FROM hardware_suppliers;
-*****************************************************************************************************
+    SELECT *
+    FROM hardware_suppliers;
 
-Обновить VIEW или оператор ALTER VIEW.
+---
+### Обновить VIEW или оператор ALTER VIEW.
+
 Мы можем изменить определение VIEW в MySQL, не удаляя его с помощью оператора ALTER VIEW.
 Синтаксис оператора ALTER VIEW в MySQL:
 
-*****************************************************************************************************
-ALTER VIEW view_name AS
-
-SELECT columns
-
-FROM table
-
-WHERE conditions;
-*****************************************************************************************************
+    ALTER VIEW view_name AS
+    SELECT columns
+    FROM table
+    WHERE conditions;
 
 Пример того, как можно использовать оператор ALTER VIEW в MySQL:
 
-*****************************************************************************************************
-ALTER VIEW hardware_suppliers AS
-SELECT supplier_id, supplier_name, address, city
-FROM suppliers
-WHERE category_type = 'Hardware';
-*****************************************************************************************************
+    ALTER VIEW hardware_suppliers AS
+    SELECT supplier_id, supplier_name, address, city
+    FROM suppliers
+    WHERE category_type = 'Hardware';
 
 Этот пример ALTER VIEW в MySQL обновит определение VIEW с именем hardware_suppliers, не удаляя его. 
 В этом примере мы добавляем столбцы address и city в VIEW.
 
-Удалить VIEW
+---
+### Удалить VIEW
+
 Когда в MySQL создается VIEW, мы можем удалить его с помощью оператора DROP VIEW.
 Синтаксис оператора DROP VIEW в MySQL:
 
-*****************************************************************************************************
-DROP VIEW [IF EXISTS] view_name;
-*****************************************************************************************************
+    DROP VIEW [IF EXISTS] view_name;
 
 Параметры или аргументы:
 - view_name - имя представления, которое вы хотите удалить.
@@ -81,8 +68,6 @@ DROP VIEW [IF EXISTS] view_name;
 
 Ниже приведен пример использования оператора DROP VIEW в MySQL:
 
-*****************************************************************************************************
-DROP VIEW hardware_suppliers;
-*****************************************************************************************************
+    DROP VIEW hardware_suppliers;
 
 Этот пример DROP VIEW удалит MySQL VIEW с именем hardware_suppliers.
