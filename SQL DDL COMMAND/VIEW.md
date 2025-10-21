@@ -22,7 +22,6 @@
 
 Ниже приведен пример использования оператора CREATE VIEW для создания представления в MySQL:
 
-    MySQL
     CREATE VIEW hardware_suppliers AS
     SELECT supplier_id, supplier_name
     FROM suppliers
