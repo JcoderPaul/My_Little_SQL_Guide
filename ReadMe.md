@@ -1,6 +1,6 @@
 ### **[SQL Таблицы и представления(view)](https://github.com/JcoderPaul/My_Little_SQL_Guide/tree/master/SQL%20DDL%20COMMAND)**
 
-- [CREATE TABLE](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DDL%20COMMAND/CREATE.txt) - позволяет создавать и определять таблицу ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DDL%20COMMAND/MySQL/CREATE%20TABLE.sql)),([PostgreSQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DDL%20COMMAND/PostgreSQL/CREATE%20(TABLE%2C%20SCHEMA).sql));
+- [CREATE TABLE](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DDL%20COMMAND/CREATE.md) - позволяет создавать и определять таблицу ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DDL%20COMMAND/MySQL/CREATE%20TABLE.sql)),([PostgreSQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DDL%20COMMAND/PostgreSQL/CREATE%20(TABLE%2C%20SCHEMA).sql));
 - [CREATE TABLE AS](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DDL%20COMMAND/CREATE%20TABLE%20AS.txt) - используется для создания таблицы из 
                   существующей таблицы путем копирования 
                   столбцов существующей таблицы ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DDL%20COMMAND/MySQL/SUBQ%20from%20TABLE.sql));
