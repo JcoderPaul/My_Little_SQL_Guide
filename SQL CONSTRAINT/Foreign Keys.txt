@@ -1,4 +1,4 @@
-****** Foreign Keys ******
+### Foreign Keys
 
 Foreign Keys является способом обеспечить целостность данных в нашей базе 
 данных Oracle. Внешний ключ означает, что значения в одной таблице должны 
@@ -13,48 +13,37 @@ Foreign key в дочерней таблице, как правило, ссыл�
 (первичный ключ) в родительской таблице. Foreign key может быть определен 
 либо в операторе CREATE TABLE или в операторе ALTER TABLE.
 
-****** Создание Foreign Keys с использованием CREATE TABLE ******
+---
+### Создание Foreign Keys с использованием CREATE TABLE
 
 Синтаксис:
 
-***************************************************************************
-CREATE TABLE table_name
-
-(
-
-column1 datatype null/not null,
-
-column2 datatype null/not null,
-
-...
-
-CONSTRAINT fk_column
-
-FOREIGN KEY (column1, column2, ... column_n)
-
-REFERENCES parent_table (column1, column2, ... column_n)
-
-);
-***************************************************************************
+    CREATE TABLE table_name
+    (
+    column1 datatype null/not null,
+    column2 datatype null/not null,
+    ...
+    CONSTRAINT fk_column
+    FOREIGN KEY (column1, column2, ... column_n)
+    REFERENCES parent_table (column1, column2, ... column_n)
+    );
 
 Пример:
 
-***************************************************************************
-CREATE TABLE supplier
-( supplier_id numeric(10) not null,
-  supplier_name varchar2(50) not null,
-  contact_name varchar2(50),
-  CONSTRAINT supplier_pk PRIMARY KEY (supplier_id)
-);
-
-CREATE TABLE products
-( product_id numeric(10) not null,
-  supplier_id numeric(10) not null,
-  CONSTRAINT fk_supplier
-    FOREIGN KEY (supplier_id)
-    REFERENCES supplier(supplier_id)
-);
-***************************************************************************
+    CREATE TABLE supplier
+    ( supplier_id numeric(10) not null,
+      supplier_name varchar2(50) not null,
+      contact_name varchar2(50),
+      CONSTRAINT supplier_pk PRIMARY KEY (supplier_id)
+    );
+    
+    CREATE TABLE products
+    ( product_id numeric(10) not null,
+      supplier_id numeric(10) not null,
+      CONSTRAINT fk_supplier
+        FOREIGN KEY (supplier_id)
+        REFERENCES supplier(supplier_id)
+    );
 
 В этом примере мы создали primary key таблицы supplier под названием supplier_pk. 
 Она состоит только из одного поля - supplier_id. Затем мы создали foreign key с 
@@ -63,57 +52,47 @@ CREATE TABLE products
 
 Можно создать foreign key с более чем одним полем:
 
-***************************************************************************
-CREATE TABLE supplier
-( supplier_id numeric(10) not null,
-  supplier_name varchar2(50) not null,
-  contact_name varchar2(50),
-  CONSTRAINT supplier_pk PRIMARY KEY (supplier_id, supplier_name)
-);
-
-CREATE TABLE products
-( product_id numeric(10) not null,
-  supplier_id numeric(10) not null,
-  supplier_name varchar2(50) not null,
-  CONSTRAINT fk_supplier_comp
-    FOREIGN KEY (supplier_id, supplier_name)
-    REFERENCES supplier(supplier_id, supplier_name)
-);
-***************************************************************************
+    CREATE TABLE supplier
+    ( supplier_id numeric(10) not null,
+      supplier_name varchar2(50) not null,
+      contact_name varchar2(50),
+      CONSTRAINT supplier_pk PRIMARY KEY (supplier_id, supplier_name)
+    );
+    
+    CREATE TABLE products
+    ( product_id numeric(10) not null,
+      supplier_id numeric(10) not null,
+      supplier_name varchar2(50) not null,
+      CONSTRAINT fk_supplier_comp
+        FOREIGN KEY (supplier_id, supplier_name)
+        REFERENCES supplier(supplier_id, supplier_name)
+    );
 
 В этом примере, наш foreign key называется fk_foreign_comp ссылается на таблицу 
 supplier на основании двух полей - supplier_id и supplier_name.
 
-****** Создание FOREIGN KEY с использованием ALTER TABLE ******
+---
+### Создание FOREIGN KEY с использованием ALTER TABLE
 
 Синтаксис:
 
-***************************************************************************
-ALTER TABLE table_name
-
-ADD CONSTRAINT constraint_name
-
-FOREIGN KEY (column1, column2, ... column_n)
-
-REFERENCES parent_table (column1, column2, ... column_n);
-***************************************************************************
+    ALTER TABLE table_name
+    ADD CONSTRAINT constraint_name
+    FOREIGN KEY (column1, column2, ... column_n)
+    REFERENCES parent_table (column1, column2, ... column_n);
 
 Пример:
 
-***************************************************************************
-ALTER TABLE products
-ADD CONSTRAINT fk_supplier
-FOREIGN KEY (supplier_id)
-REFERENCES supplier(supplier_id);
-***************************************************************************
+    ALTER TABLE products
+    ADD CONSTRAINT fk_supplier
+    FOREIGN KEY (supplier_id)
+    REFERENCES supplier(supplier_id);
 
 В этом примере мы создали foreign key с именем fk_supplier, который ссылается 
 на таблицу supplier, на основании поля supplier_id. Cоздания foreign key с более 
 чем одним полем:
 
-***************************************************************************
-ALTER TABLE products
-ADD CONSTRAINT fk_supplier
-FOREIGN KEY (supplier_id, supplier_name)
-REFERENCES supplier(supplier_id, supplier_name);
-***************************************************************************
+    ALTER TABLE products
+    ADD CONSTRAINT fk_supplier
+    FOREIGN KEY (supplier_id, supplier_name)
+    REFERENCES supplier(supplier_id, supplier_name);
