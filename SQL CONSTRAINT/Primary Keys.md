@@ -6,6 +6,7 @@
 
 ---
 **!!! ВНИМАНИЕ !!!**
+
 В Oracle/PLSQL Primary Key не может содержать более 32 столбцов.
 Primary Key может быть определен либо в операторе CREATE TABLE или в операторе ALTER TABLE.
 
