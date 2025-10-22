@@ -13,16 +13,16 @@
 ---
 ### **[Ключи, индексы, ограничения в SQL](https://github.com/JcoderPaul/My_Little_SQL_Guide/tree/master/SQL%20CONSTRAINT)**
 
-- [Primary Keys](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/Primary%20Keys.txt) - Первичные ключи ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/MySQL/CONSTRAINT%20-%20Primary%20Keys%20(duble%20constr).sql)),([PostgreSQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/PostgreSQL/PRIMARY%20KEY%20in%20PostgreSQL.sql));
-- [Foreign Keys](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/Foreign%20Keys.txt) - Внешние ключи ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/MySQL/CONSTRAINT%20-%20FOREIGN%20KEY.sql)),([PostgreSQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/PostgreSQL/FOREIGN%20KEY%20in%20PostgreSQL.sql));
+- [Primary Keys](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/Primary%20Keys.md) - Первичные ключи ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/MySQL/CONSTRAINT%20-%20Primary%20Keys%20(duble%20constr).sql)),([PostgreSQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/PostgreSQL/PRIMARY%20KEY%20in%20PostgreSQL.sql));
+- [Foreign Keys](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/Foreign%20Keys.md) - Внешние ключи ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/MySQL/CONSTRAINT%20-%20FOREIGN%20KEY.sql)),([PostgreSQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/PostgreSQL/FOREIGN%20KEY%20in%20PostgreSQL.sql));
 - Foreign Keys with cascade delete - Внешние ключи с каскадным удалением;
 - Foreign Keys with set null on delete - Внешние ключи с «set null on delete»;
 - Drop a foreign key - Удаление внешнего ключа;
 - Disable a foreign key - Выключение внешнего ключа;
 - Enable a foreign key - Включение внешнего ключа;
 - Indexes - Индексы;
-- [unique constraints](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/UNIQUE.txt) - Уникальное ограничение ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/MySQL/CONSTRAINT%20-%20UNIQUE.sql)),([PostgreSQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/PostgreSQL/UNIQUE%20in%20PostgreSQL.sql));
-- [check constraints](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/CHECK.txt) - Проверка ограничения ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/MySQL/CONSTRAINT%20-%20CHECK.sql)),([PostgreSQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/PostgreSQL/CHECK%20in%20PostgreSQL.sql));
+- [unique constraints](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/UNIQUE.md) - Уникальное ограничение ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/MySQL/CONSTRAINT%20-%20UNIQUE.sql)),([PostgreSQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/PostgreSQL/UNIQUE%20in%20PostgreSQL.sql));
+- [check constraints](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/CHECK.md) - Проверка ограничения ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/MySQL/CONSTRAINT%20-%20CHECK.sql)),([PostgreSQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/PostgreSQL/CHECK%20in%20PostgreSQL.sql));
 
 ---
 ### **Типы SQL-запросов**
