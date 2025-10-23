@@ -1,4 +1,4 @@
-****** SQL оператор SELECT ******
+### SQL оператор SELECT
 
 SQL оператор SELECT используется для извлечения записей из одной или 
 нескольких таблиц или представлений в базе данных SQL. Полученные записи 
@@ -6,17 +6,13 @@ SQL оператор SELECT используется для извлечения
 
 Синтаксис для оператора SELECT в SQL:
 
-******************************************************************************
-SELECT expressions
-
-  FROM tables
-
-[WHERE conditions]
-
-[ORDER BY expression [ ASC | DESC ]];
-******************************************************************************
+    SELECT expressions
+    FROM tables
+    [WHERE conditions]
+    [ORDER BY expression [ ASC | DESC ]];
 
 Параметры или аргумент:
+
 - expressions - cтолбцы или расчеты, которые вы хотите получить. 
                 Используйте *, если вы хотите выбрать все столбцы.
 - tables - таблицы, из которых вы хотите получить записи. 
@@ -34,12 +30,10 @@ SELECT expressions
 
 Пример работы оператора SELECT в PgSQL:
 
-******************************************************************************
-SELECT *
-FROM customers
-WHERE favorite_website = 'google.com'
-ORDER BY last_name ASC;
-******************************************************************************
+    SELECT *
+    FROM customers
+    WHERE favorite_website = 'google.com'
+    ORDER BY last_name ASC;
 
 В этом примере мы использовали *, чтобы показать, что мы хотим просмотреть все 
 поля из таблицы customers, где favorite_website - 'google.com'. Набор результатов 
@@ -48,19 +42,17 @@ ORDER BY last_name ASC;
 Теперь давайте продемонстрируем, как использовать оператор SELECT в PgSQL для 
 выбора отдельных столбцов таблицы:
 
-******************************************************************************
-SELECT supplier_name, 
-       city
-FROM suppliers
-WHERE supplier_id > 500
-ORDER BY supplier_name ASC, city DESC;
-******************************************************************************
+    SELECT supplier_name, city
+    FROM suppliers
+    WHERE supplier_id > 500
+    ORDER BY supplier_name ASC, city DESC;
 
 В этом примере возвращаются только поля supplier_name и city из таблицы supplier, 
 где значение supplier_id больше, чем 500. Результаты сортируются по supplier_name 
 в порядке возрастания, а затем по полю city в порядке убывания.
 
-****** Выбор отдельных полей из нескольких таблиц ******
+---
+### Выбор отдельных полей из нескольких таблиц
 
 Вы также можете использовать SQL оператор SELECT для извлечения полей из нескольких таблиц.
 В этом примере у нас есть таблица orders со следующими полями: order_id, customer_id, order_date
@@ -69,15 +61,12 @@ ORDER BY supplier_name ASC, city DESC;
 Теперь давайте выберем столбцы из таблиц orders и customer. 
 Используем запрос SELECT в PgSQL:
 
-******************************************************************************
-SELECT orders.order_id, 
-       customers.last_name
-FROM orders
-INNER JOIN customers
-ON orders.customer_id = customers.customer_id
-WHERE orders.order_id <> 1
-ORDER BY orders.order_id;
-******************************************************************************
+    SELECT orders.order_id, customers.last_name
+    FROM orders
+    INNER JOIN customers
+    ON orders.customer_id = customers.customer_id
+    WHERE orders.order_id <> 1
+    ORDER BY orders.order_id;
 
 Этот пример SELECT объединяет две таблицы, чтобы дать нам набор результатов, который 
 отображает order_id из таблицы orders и last_name из таблицы customers. Каждый раз, 
@@ -88,15 +77,12 @@ ORDER BY orders.order_id;
 Если вы хотите выбрать все поля из таблицы orders, а затем поле last_name из таблицы 
 клиентов, можно применить запрос SELECT в PgSQL:
 
-******************************************************************************
-SELECT orders.*,
-       customers.last_name
-FROM orders
-INNER JOIN customers
-ON orders.customer_id = customers.customer_id
-WHERE orders.order_id <> 1
-ORDER BY orders.order_id;
-******************************************************************************
+    SELECT orders.*, customers.last_name
+    FROM orders
+    INNER JOIN customers
+    ON orders.customer_id = customers.customer_id
+    WHERE orders.order_id <> 1
+    ORDER BY orders.order_id;
 
 В этом примере мы используем orders.*, чтобы показать, что мы хотим выбрать все поля 
 из таблицы orders, а затем мы выбираем поле last_name из таблицы customers.
