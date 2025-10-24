@@ -25,7 +25,7 @@
 - [check constraints](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/CHECK.md) - Проверка ограничения ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/MySQL/CONSTRAINT%20-%20CHECK.sql)),([PostgreSQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONSTRAINT/PostgreSQL/CHECK%20in%20PostgreSQL.sql));
 
 ---
-### **Типы SQL-запросов**
+### **[Типы SQL-запросов](https://github.com/JcoderPaul/My_Little_SQL_Guide/tree/master/SQL%20DML%20COMMAND)**
 
 - [SELECT](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/SELECT.md) - Извлечение записей из таблицы ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/MySQL/SELECT.sql)),([PostgreSQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/PostgreSQL/SELECT%20with%20ORDER%20BY%20and%20DESC.sql));
 - [INSERT](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/INSERT.md) - Вставка записей в таблицу ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/MySQL/INSERT.sql)),([PostgreSQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/PostgreSQL/INSERT%20(TABLE%2C%20SCHEMA).sql));
