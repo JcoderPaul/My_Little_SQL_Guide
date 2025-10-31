@@ -1,33 +1,27 @@
-****** SQL оператор UNION ******
+### SQL оператор UNION
 
 SQL оператор UNION используется для объединения результирующих наборов из 2-х
 или более операторов SELECT. Он удаляет повторяющиеся строки между различными 
 запросами SELECT. Каждый оператор SELECT в UNION должен иметь одинаковое 
 количество полей в наборах результатов с одинаковыми типами данных.
 
-****** Разница между UNION и UNION ALL ******
+---
+### Разница между UNION и UNION ALL
 UNION удаляет повторяющиеся строки
 Оператор UNION ALL не удаляет повторяющиеся строки
 
 Синтаксис:
 
-********************************************************************************
-SELECT expression1, expression2, ... expression_n
-
-  FROM tables
-
-[WHERE conditions]
-
- UNION
-
-SELECT expression1, expression2, ... expression_n
-
-  FROM tables
-
-[WHERE conditions];
-********************************************************************************
+    SELECT expression1, expression2, ... expression_n
+      FROM tables
+    [WHERE conditions]
+     UNION
+    SELECT expression1, expression2, ... expression_n
+      FROM tables
+    [WHERE conditions];
 
 Параметры:
+
 - expression1, expression2, expression_n - cтолбцы или расчеты, которые 
                                            мы хотим получить.
 - tables - таблицы, из которых мы хотим получить записи. В предложении 
@@ -35,28 +29,27 @@ SELECT expression1, expression2, ... expression_n
 - WHERE conditions - необязательный. Условия, которые должны быть выполнены 
                      для записей, которые будут выбраны.
 
-!!! ВНИМАНИЕ !!!
+---
+**!!! ВНИМАНИЕ !!!**
 В обоих операторах SELECT должно быть одинаковое количество выражений
 Соответствующие выражения должны иметь одинаковый тип данных в запросах SELECT. 
 Например: expression1 должен иметь одинаковый тип данных как в первом, так 
 и во втором операторе SELECT
-!!! ВНИМАНИЕ !!!
 
-****** UNION с одиночным полем с тем же именем ******
+---
+### UNION с одиночным полем с тем же именем
 
 Использование SQL оператора UNION, который возвращает одно поле. В этом примере 
 поле в обоих операторах SELECT будет иметь одинаковое имя и тип данных.
 
 Пример:
 
-********************************************************************************
-SELECT supplier_id
-FROM suppliers
-UNION
-SELECT supplier_id
-FROM orders
-ORDER BY supplier_id;
-********************************************************************************
+    SELECT supplier_id
+    FROM suppliers
+    UNION
+    SELECT supplier_id
+    FROM orders
+    ORDER BY supplier_id;
 
 В этом SQL запросе, если supplier_id появилось в таблицах suppliers и orders 
 (т.е. в обеих таблицах), оно будет отображено один раз в вашем наборе результатов. 
@@ -69,14 +62,12 @@ ORDER BY supplier_id;
 
 Формируем SQL запрос с UNION:
 
-********************************************************************************
-SELECT supplier_id
-FROM suppliers
-UNION
-SELECT supplier_id
-FROM orders
-ORDER BY supplier_id;
-********************************************************************************
+    SELECT supplier_id
+    FROM suppliers
+    UNION
+    SELECT supplier_id
+    FROM orders
+    ORDER BY supplier_id;
 
 В данном случае UNION возьмет все значения supplier_id из таблицы suppliers, а также 
 из таблицы orders и возвратит комбинированный набор результатов. Поскольку оператор 
@@ -86,7 +77,8 @@ UNION удалит дубликаты между результирующими 
 
 Если мы хотим отображать дубликаты, нужно использовать оператор UNION ALL.
 
-****** Использование UNION с разными именами полей ******
+---
+### Использование UNION с разными именами полей
 
 Нет необходимости, чтобы соответствующие столбцы в каждом операторе SELECT имели 
 одинаковые имена, но они должны быть с одинаковыми, соответствующими типами данных 
@@ -97,18 +89,16 @@ UNION удалит дубликаты между результирующими 
 Использование оператора UNION с разными именами столбцов и упорядочиванием 
 результатов запроса, пример:
 
-********************************************************************************
-SELECT supplier_id, 
-       supplier_name
-FROM suppliers
-WHERE supplier_id > 2000
-   UNION
-SELECT company_id, 
-       company_name
-FROM companies
-WHERE company_id > 1000
-ORDER BY 1;
-********************************************************************************
+    SELECT supplier_id, 
+           supplier_name
+    FROM suppliers
+    WHERE supplier_id > 2000
+       UNION
+    SELECT company_id, 
+           company_name
+    FROM companies
+    WHERE company_id > 1000
+    ORDER BY 1;
 
 В этом запросе, имена столбцов в двух операторах SELECT различаются, поэтому более 
 разумно ссылаться на столбцы в ORDER BY по их положению в наборе результатов. 
@@ -116,24 +106,25 @@ ORDER BY 1;
 возрастания, как обозначено ORDER BY 1. Поля supplier_id / company_id находятся в 
 позиции № 1 в наборе результатов.
 
-Пример более подробно. 
+Пример более подробно:
+
 Допустим у нас есть таблица suppliers с полями: supplier_id, supplier_name.
 И таблица companies с полями: company_id, company_name.
 
 Формируем SQL запрос с UNION:
 
-********************************************************************************
-SELECT supplier_id, 
-       supplier_name
-FROM suppliers
-WHERE supplier_id > 2000
- UNION
-SELECT company_id, company_name
-FROM companies
-WHERE company_id > 1000
-ORDER BY 1;
-********************************************************************************
+    SELECT supplier_id, 
+           supplier_name
+    FROM suppliers
+    WHERE supplier_id > 2000
+     UNION
+    SELECT company_id, company_name
+    FROM companies
+    WHERE company_id > 1000
+    ORDER BY 1;
+
 В результате мы получим:
+
 - Во-первых, все записи с supplier_id, больше 2000 имеющие дубликаты 
   (например, 3000, 4000), появятся только один раз в наборе результатов, 
   поскольку запрос UNION удалил (не отобразит) повторяющиеся записи.
@@ -143,18 +134,16 @@ ORDER BY 1;
 
 Мы можем присвоить псевдонимы столбцам следующим образом:
 
-********************************************************************************
-SELECT supplier_id AS ID_Value,
-       supplier_name AS Name_Value
-FROM suppliers
-WHERE supplier_id > 2000
- UNION
-SELECT company_id AS ID_Value, 
-       company_name AS Name_Value
-FROM companies
-WHERE company_id > 1000
-ORDER BY 1;
-********************************************************************************
+    SELECT supplier_id AS ID_Value,
+           supplier_name AS Name_Value
+    FROM suppliers
+    WHERE supplier_id > 2000
+     UNION
+    SELECT company_id AS ID_Value, 
+           company_name AS Name_Value
+    FROM companies
+    WHERE company_id > 1000
+    ORDER BY 1;
 
 Теперь заголовки столбцов в результате выдачи будут иметь псевдонимы ID_Value для 
 первого столбца и Name_Value для второго столбца.
