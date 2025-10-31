@@ -1,4 +1,4 @@
-****** SQL оператор UNION ALL *******
+### SQL оператор UNION ALL
 
 SQL оператор UNION ALL используется для объединения результирующих наборов 
 из 2-ух или более операторов SELECT. Он не удаляет повторяющиеся строки между 
@@ -6,55 +6,49 @@ SQL оператор UNION ALL используется для объедине�
 Каждый оператор SELECT в UNION ALL должен иметь одинаковое количество полей в 
 наборах результатов с одинаковыми типами данных.
 
-****** Разница между UNION и UNION ALL ******
+---
+### Разница между UNION и UNION ALL
+
 Оператор UNION удаляет повторяющиеся строки.
 UNION ALL не удаляет (отображает) повторяющиеся строки
 
 Синтаксис для оператора UNION ALL в SQL:
 
-************************************************************************************
-SELECT expression1, expression2, ... expression_n
-
-FROM tables
-
-[WHERE conditions]
-
-UNION ALL
-
-SELECT expression1, expression2, ... expression_n
-
-FROM tables
-
-[WHERE conditions];
-************************************************************************************
+           SELECT expression1, expression2, ... expression_n
+             FROM tables
+           [WHERE conditions]
+             UNION ALL
+           SELECT expression1, expression2, ... expression_n
+             FROM tables
+           [WHERE conditions];
 
 Параметры:
+
 - expression1, expression2, expression_n - cтолбцы или расчеты, которые мы хотим получить.
 - tables - таблицы, из которых мы хотим получить записи. В предложении FROM должна быть 
            указана хотя бы одна таблица.
 - WHERE conditions - необязательный. Условия, которые должны быть выполнены для записей, 
                      которые будут выбраны.
 
-!!! ВНИМАНИЕ !!!
+---
+**!!! ВНИМАНИЕ !!!**
 В обоих запросах SELECT должно быть одинаковое количество выражений.
 Соответствующие выражения должны иметь одинаковый тип данных в запросах SELECT. 
 Например: expression1 должен иметь одинаковый тип данных как в первом, так и во 
 втором операторе SELECT
-!!! ВНИМАНИЕ !!!
 
-****** UNION с одиночным полем с тем же именем *******
+---
+### UNION с одиночным полем с тем же именем
 
 SQL запрос с UNION ALL, который возвращает одно поле. В этом простом примере поле в обоих 
 операторах SELECT будет иметь одинаковое имя и тип данных.
 
-************************************************************************************
-SELECT supplier_id
-FROM suppliers
- UNION ALL
-SELECT supplier_id
-FROM orders
-ORDER BY supplier_id;
-************************************************************************************
+           SELECT supplier_id
+           FROM suppliers
+            UNION ALL
+           SELECT supplier_id
+           FROM orders
+           ORDER BY supplier_id;
 
 Этот пример с UNION ALL вернет supplier_id несколько раз в наборе результатов, если 
 это же значение появилось в таблицах suppliers и orders. SQL оператор UNION ALL не 
@@ -65,21 +59,20 @@ ORDER BY supplier_id;
 И таблица orders с полями: order_id, order_date, supplier_id.
 Формируем SELECT c UNION ALL:
 
-************************************************************************************
-SELECT supplier_id
-FROM suppliers
- UNION ALL
-SELECT supplier_id
-FROM orders
-ORDER BY supplier_id;
-************************************************************************************
+           SELECT supplier_id
+           FROM suppliers
+            UNION ALL
+           SELECT supplier_id
+           FROM orders
+           ORDER BY supplier_id;
 
 В данном случае UNION ALL возьмет все значения supplier_id из таблицы suppliers, а 
 также из таблицы orders и возвратил комбинированный набор результатов (полный). 
 Дубликаты не будут удалены, если в полях supplier_id обеих таблиц имеются одинаковые
 значения мы увидем их при выдаче.
 
-****** UNION ALL с разными именами полей ******
+---
+### UNION ALL с разными именами полей
 
 Столбцы в каждом операторе SELECT могут иметь разные имена, но они должны быть с 
 одинаковыми соответствующими типами данных (INT к INT или STRING к STRING ).
@@ -89,17 +82,15 @@ ORDER BY supplier_id;
 
 Пример:
 
-************************************************************************************
-SELECT supplier_id, 
-       supplier_name
-FROM suppliers
-WHERE supplier_id > 2000
- UNION ALL
-SELECT company_id, company_name
-FROM companies
-WHERE company_id > 1000
-ORDER BY 1;
-************************************************************************************
+           SELECT supplier_id, 
+                  supplier_name
+           FROM suppliers
+           WHERE supplier_id > 2000
+            UNION ALL
+           SELECT company_id, company_name
+           FROM companies
+           WHERE company_id > 1000
+           ORDER BY 1;
 
 В данном примере имена столбцов в двух операторах SELECT различаются, удобнее ссылаться 
 на столбцы в предложении ORDER BY по их положению в наборе результатов. В этом примере мы 
@@ -107,6 +98,7 @@ ORDER BY 1;
 ORDER BY 1. Поля supplier_id / company_id находятся в позиции № 1 в наборе результатов.
 
 В результате такого запроса произойдет следующее:
+
 - Во-первых, будут возвращены все записи с supplier_id (все дубликаты), поскольку запрос 
   UNION ALL возвращает все строки и отображает дубликаты.
 - Во-вторых, заголовки столбцов в наборе результатов называются supplier_id и supplier_name. 
@@ -115,17 +107,15 @@ ORDER BY 1. Поля supplier_id / company_id находятся в позици
 
 Как всегда мы имеем возможность присвоить псевдонимы следующим образом:
 
-************************************************************************************
-SELECT supplier_id AS ID_Value, 
-       supplier_name AS Name_Value
-FROM suppliers
-WHERE supplier_id > 2000
- UNION ALL
-SELECT company_id AS ID_Value, company_name AS Name_Value
-FROM companies
-WHERE company_id > 1000
-ORDER BY 1;
-************************************************************************************
+           SELECT supplier_id AS ID_Value, 
+                  supplier_name AS Name_Value
+           FROM suppliers
+           WHERE supplier_id > 2000
+            UNION ALL
+           SELECT company_id AS ID_Value, company_name AS Name_Value
+           FROM companies
+           WHERE company_id > 1000
+           ORDER BY 1;
 
 Теперь заголовки столбцов в результате выдачи будут иметь псевдоним как ID_Value для 
 первого столбца и Name_Value для второго столбца.
