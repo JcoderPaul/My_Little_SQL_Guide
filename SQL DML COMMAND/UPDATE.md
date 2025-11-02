@@ -1,54 +1,35 @@
-****** SQL оператор UPDATE ******
+### SQL оператор UPDATE
 
 SQL оператор UPDATE используется для обновления существующих 
 записей в таблицах.
 
 Синтаксис для оператора UPDATE при обновлении таблицы в SQL:
 
-**********************************************************************************
-UPDATE table
-
-SET column1 = expression1,
-
-    column2 = expression2,
-
-    ...
-
-[WHERE conditions];
-**********************************************************************************
+		UPDATE table
+		SET column1 = expression1,
+		    column2 = expression2,
+		    ...
+		[WHERE conditions];
 
 Синтаксис SQL запроса UPDATE при обновлении таблицы данными из другой таблицы:
 
-**********************************************************************************
-UPDATE table1
-
-SET column1 = (SELECT expression1
-
-FROM table2
-
-WHERE conditions)
-
-[WHERE conditions];
-
-**********************************************************************************
+		UPDATE table1
+		SET column1 = (SELECT expression1
+		FROM table2
+		WHERE conditions)
+		[WHERE conditions];
 
 Синтаксис SQL запроса UPDATE при обновлении нескольких таблиц (не разрешен в Oracle):
 
-**********************************************************************************
-UPDATE table1, table2, ...
-
-SET column1 = expression1,
-
-    column2 = expression2,
-
-    ...
-
-WHERE table1.column = table2.column
-
-[AND conditions];
-**********************************************************************************
+		UPDATE table1, table2, ...
+		SET column1 = expression1,
+		    column2 = expression2,
+		    ...
+		WHERE table1.column = table2.column
+		[AND conditions];
 
 Параметры:
+
 - column1, column2 - столбцы, которые мы хотим обновить.
 - expression1, expression2 - это новые значения, назначаемые column1, column2. 
                              Поэтому column1 будет присвоено значение expression1, 
@@ -57,22 +38,22 @@ WHERE table1.column = table2.column
                      выполнить обновление. Если никаких условий не предусмотрено, 
                      то все записи в таблице будут обновлены.
 
-****** Обновление одного столбца ******
+---
+### Обновление одного столбца
 
 Допустим, у нас есть таблица customers с полями: customer_id, first_name,
                                                  last_name, favorite_website.
 Формируем запрос:
 
-**********************************************************************************
-UPDATE customers
-SET first_name = 'Joseph'
-WHERE customer_id = 8000;
-**********************************************************************************
+		UPDATE customers
+		SET first_name = 'Joseph'
+		WHERE customer_id = 8000;
 
 В этом примере UPDATE для поля first_name установлено (заменено, оновлено) значение 
 'Joseph' в таблице customers, где customer_id равно 8000.
 
-****** Обновить несколько столбцов ******
+---
+### Обновить несколько столбцов
 
 Когда мы обновляем несколько столбцов в выражении UPDATE, нам нужно разделить 
 запятыми пары столбец / значение в предложении SET.
@@ -83,14 +64,12 @@ WHERE customer_id = 8000;
                                                    city, state.
 Формируем SQL запрос с UPDATE:
 
-**********************************************************************************
-UPDATE suppliers
-SET supplier_id   = 150,
-    supplier_name = 'Apple',
-    city          = 'Cupertino'
-    state         = 'California'
-WHERE supplier_name = 'Google';
-**********************************************************************************
+		UPDATE suppliers
+		SET supplier_id   = 150,
+		    supplier_name = 'Apple',
+		    city          = 'Cupertino'
+		    state         = 'California'
+		WHERE supplier_name = 'Google';
 
 В этом примере UPDATE обновит (заменит) значения supplier_id на 150, 
                                                  supplier_name на 'Apple', 
@@ -98,23 +77,21 @@ WHERE supplier_name = 'Google';
                                                  state на 'California', 
 в той (тех) записях, где supplier_name это "Google".
 
-****** Обновление таблицы данными из другой таблицы ******
+---
+### Обновление таблицы данными из другой таблицы
 
-У нас есть таблица products со следующими полями: product_id, product_name, 
-                                                  category_id.
+У нас есть таблица products со следующими полями: product_id, product_name, category_id.
 И таблица summary_data с полями: product_id, current_category.
 
 Формируем запрос:
 
-**********************************************************************************
-UPDATE summary_data
-SET current_category = (SELECT category_id
-                        FROM products
-                        WHERE products.product_id = summary_data.product_id)
-WHERE EXISTS (SELECT category_id
-	      FROM products
-              WHERE products.product_id = summary_data.product_id);
-**********************************************************************************
+		UPDATE summary_data
+		SET current_category = (SELECT category_id
+		                        FROM products
+		                        WHERE products.product_id = summary_data.product_id)
+		WHERE EXISTS (SELECT category_id
+			      FROM products
+		              WHERE products.product_id = summary_data.product_id);
 
 В этом примере будет обновлено поле current_category в таблице summary_data 
 с помощью category_id из таблицы products, где значения product_id совпадают. 
