@@ -1,4 +1,4 @@
-****** JOIN-s оператор-s MySQL ******
+### JOIN-s оператор-s MySQL
 
 Схематично: "Левая таблица" - JOIN - "Правая таблица" 
 
@@ -7,45 +7,39 @@ JOIN выполняется всякий раз, когда две или бол
 
 Существуют различные типы соединений MySQL:
 
-MySQL (PostgreSQL) INNER JOIN (или иногда называют простое соединение)
-MySQL (PostgreSQL) LEFT OUTER JOIN (или иногда называют LEFT JOIN)
-MySQL (PostgreSQL) RIGHT OUTER JOIN (или иногда называют RIGHT JOIN)
-PostgreSQL FULL OUTER JOIN (или иногда называется FULL JOIN)
+- MySQL (PostgreSQL) INNER JOIN (или иногда называют простое соединение)
+- MySQL (PostgreSQL) LEFT OUTER JOIN (или иногда называют LEFT JOIN)
+- MySQL (PostgreSQL) RIGHT OUTER JOIN (или иногда называют RIGHT JOIN)
+- PostgreSQL FULL OUTER JOIN (или иногда называется FULL JOIN)
 
 Рассмотрим синтаксис MySQL JOIN и примеры MySQL JOIN.
 
-****** INNER JOIN (простое соединение) ******
+---
+### INNER JOIN (простое соединение)
 
 Наиболее распространенный тип соединения это MySQL INNER JOINS, который возвращает 
 все строки из нескольких таблиц, где выполняется условия соединения.
 
 Синтаксис INNER JOIN в MySQL:
 
-***************************************************************************************
-SELECT columns
+    SELECT columns
+    FROM table1 # Таблица слева
+    INNER JOIN table2 # Таблица справа
+    ON table1.column = table2.column; # Поля по которым происходит пересечение (выборка)
 
-FROM table1 # Таблица слева
-
-INNER JOIN table2 # Таблица справа
-
-ON table1.column = table2.column; # Поля по которым происходит пересечение (выборка)
-***************************************************************************************
-
-!!! Если представить две таблицы table1 и table2 в виде равных кругов, которые пересекаются
+**!!! Если представить две таблицы table1 и table2 в виде равных кругов, которые пересекаются
 между собой, то зона их пересечения будет походить на двояковыпуклую линзу, а если эту зону
 закрасить для наглядности, то это и будет результат работы простого INNER JOIN, т.е. область
-пересечения двух таблиц !!!
+пересечения двух таблиц !!!**
 
 MySQL INNER JOIN будет возвращать записи, где table1 и table2 будут пересекаться.
 
 Пример MySQL INNER JOIN:
 
-***************************************************************************************
-SELECT suppliers.supplier_id, suppliers.supplier_name, orders.order_date
-FROM suppliers
-INNER JOIN orders
-ON suppliers.supplier_id = orders.supplier_id;
-***************************************************************************************
+    SELECT suppliers.supplier_id, suppliers.supplier_name, orders.order_date
+    FROM suppliers
+    INNER JOIN orders
+    ON suppliers.supplier_id = orders.supplier_id;
 
 Этот MySQL (PostgreSQL) INNER JOIN возвращает все строки из таблиц suppliers и orders, 
 где имеются соответствующие значение поля supplier_id в обоих таблицах.
@@ -53,11 +47,12 @@ ON suppliers.supplier_id = orders.supplier_id;
 У нас есть таблица suppliers с двумя полями (supplier_id и supplier_name) которая содержит 
 следующие данные:
 
-supplier_id         supplier_name
-10000               IBM
-10001               Hewlett Packard
-10002               Microsoft
-10003               NVIDIA
+| supplier_id | supplier_name        |
+|-------------|----------------------|
+| 10000       | IBM                  |
+| 10001       | Hewlett Packard      |
+| 10002       | Microsoft            |
+| 10003       | NVIDIA               |
 
 У нас есть еще одна таблица orders с тремя полями (order_id, supplier_id и order_date) 
 и данными:
@@ -69,12 +64,10 @@ order_id        supplier_id        order_date
 
 Формируем MySQL запрос SELECT (который содержит INNER JOIN):
 
-***************************************************************************************
-SELECT suppliers.supplier_id, suppliers.supplier_name, orders.order_date
-FROM suppliers
-INNER JOIN orders
-ON suppliers.supplier_id = orders.supplier_id;
-***************************************************************************************
+    SELECT suppliers.supplier_id, suppliers.supplier_name, orders.order_date
+    FROM suppliers
+    INNER JOIN orders
+    ON suppliers.supplier_id = orders.supplier_id;
 
 Наш результирующий набор будет выглядеть следующим образом:
 
@@ -87,39 +80,33 @@ supplier_id 10002 и 10003 не существует в обеих таблиц�
 таблицы orders будет опущена, так как supplier_id 10004 не существует в таблице 
 suppliers.
 
-!!! ВНИМАНИЕ !!!
+**!!! ВНИМАНИЕ !!!
 Приведенный выше пример MySQL INNER JOIN можно переписать, используя старый неявный 
-синтаксис следующим образом (но рекомендуется использовать синтаксис INNER JOIN):
+синтаксис следующим образом (но рекомендуется использовать синтаксис INNER JOIN):**
 
-***************************************************************************************
-SELECT suppliers.supplier_id, suppliers.supplier_name, orders.order_date
-FROM suppliers, orders
-WHERE suppliers.supplier_id = orders.supplier_id;
-***************************************************************************************
+    SELECT suppliers.supplier_id, suppliers.supplier_name, orders.order_date
+    FROM suppliers, orders
+    WHERE suppliers.supplier_id = orders.supplier_id;
 
-****** LEFT OUTER JOIN ("Левое соединение") ******
+---
+### LEFT OUTER JOIN ("Левое соединение")
 
 MySQL LEFT OUTER JOIN возвращает все строки из таблиц с левосторонним соединением, указанным 
 в условии ON, и только те строки из другой таблицы, где объединяемые поля равны.
 
 Синтаксис для LEFT OUTER JOIN в MySQL:
 
-***************************************************************************************
-SELECT columns
+    SELECT columns
+    FROM table1 # Левая таблица
+    LEFT [OUTER] JOIN table2 # Правая таблица
+    ON table1.column = table2.column;
 
-FROM table1 # Левая таблица
-
-LEFT [OUTER] JOIN table2 # Правая таблица
-
-ON table1.column = table2.column;
-***************************************************************************************
-
-!!! Если представить две таблицы table1 (Левая) и table2 (Правая) в виде равных кругов, 
+**!!! Если представить две таблицы table1 (Левая) и table2 (Правая) в виде равных кругов, 
 которые пересекаются между собой, то зона их пересечения будет походить на двояковыпуклую 
 линзу. Если эту зону пересечения закрасить для наглядности, то это и будет результат 
 работы простого INNER JOIN, а если к этой зоне добавить еще и оставшуюся часть table 1 
 "Левой" таблицы, то это и будет зона пересечения по правилу LEFT OUTER JOIN пересечения 
-двух таблиц !!!
+двух таблиц !!!**
 
 В некоторых базах данных LEFT OUTER JOIN заменяется на LEFT JOIN.
 
@@ -128,12 +115,10 @@ ON table1.column = table2.column;
 
 Пример: 
 
-***************************************************************************************
-SELECT suppliers.supplier_id, suppliers.supplier_name, orders.order_date
-FROM suppliers
-LEFT JOIN orders
-ON suppliers.supplier_id = orders.supplier_id;
-***************************************************************************************
+    SELECT suppliers.supplier_id, suppliers.supplier_name, orders.order_date
+    FROM suppliers
+    LEFT JOIN orders
+    ON suppliers.supplier_id = orders.supplier_id;
 
 Этот LEFT OUTER JOIN возвратит все строки из таблицы suppliers, и только те строки из 
 таблицы orders, где объединяемые поля равны.
@@ -159,12 +144,10 @@ order_id            supplier_id         order_date
 
 Выполним MySQL запрос SELECT (который содержит LEFT OUTER JOIN):
 
-***************************************************************************************
-SELECT suppliers.supplier_id, suppliers.supplier_name, orders.order_date
-FROM suppliers
-LEFT OUTER JOIN orders
-ON suppliers.supplier_id = orders.supplier_id;
-***************************************************************************************
+    SELECT suppliers.supplier_id, suppliers.supplier_name, orders.order_date
+    FROM suppliers
+    LEFT OUTER JOIN orders
+    ON suppliers.supplier_id = orders.supplier_id;
 
 Результирующий набор будет следующим:
 
@@ -177,7 +160,7 @@ supplier_id       name                  order_date
 Строки Microsoft и NVIDIA будут включены, так как был использован LEFT OUTER JOIN. 
 Однако поле order_date для этих записей содержит значение NULL.
 
-****** RIGHT OUTER JOIN ("Правое соединение") ******
+### RIGHT OUTER JOIN ("Правое соединение")
 
 MySQL RIGHT OUTER JOIN - тип соединения, который возвращает все строки из таблиц с 
 правосторонним соединением, указанным в условии ON, и только те строки из другой 
@@ -185,40 +168,33 @@ MySQL RIGHT OUTER JOIN - тип соединения, который возвр�
 
 Синтакси RIGHT OUTER JOIN в MySQL:
 
-***************************************************************************************
-SELECT columns
+    SELECT columns
+    FROM table1
+    RIGHT [OUTER] JOIN table2
+    ON table1.column = table2.column;
 
-FROM table1
-
-RIGHT [OUTER] JOIN table2
-
-ON table1.column = table2.column;
-***************************************************************************************
-
-!!! Если представить две таблицы table1 (Левая) и table2 (Правая) в виде равных кругов, 
+**!!! Если представить две таблицы table1 (Левая) и table2 (Правая) в виде равных кругов, 
 которые пересекаются между собой, то зона их пересечения будет походить на двояковыпуклую 
 линзу. Если эту зону пересечения закрасить для наглядности, то это и будет результат 
 работы простого INNER JOIN, а если к этой зоне добавить еще и оставшуюся часть table 2 
 "Правой" таблицы, то это и будет зона пересечения по правилу RIGHT OUTER JOIN пересечения 
-двух таблиц !!!
+двух таблиц !!!**
 
 В некоторых базах данных, RIGHT OUTER JOIN заменяется на RIGHT JOIN.
 
 MySQL RIGHT OUTER JOIN возвратит все записи из table2 и только те записи из table1, которые 
 пересекаются с table2.
 
-!!! Если подумать, в простом случае, можно обойтись только одним из вариантов 
+**!!! Если подумать, в простом случае, можно обойтись только одним из вариантов 
 RIGHT/LEFT OUTER JOIN. Меняя таблицы местами в JOIN запросе, мы будем получать 
-нужный результат пересечения !!! 
+нужный результат пересечения !!!** 
 
 Ниже приведен пример MySQL RIGHT OUTER JOIN:
 
-***************************************************************************************
-SELECT orders.order_id, orders.order_date, suppliers.supplier_name
-FROM suppliers
-RIGHT JOIN orders
-ON suppliers.supplier_id = orders.supplier_id;
-***************************************************************************************
+    SELECT orders.order_id, orders.order_date, suppliers.supplier_name
+    FROM suppliers
+    RIGHT JOIN orders
+    ON suppliers.supplier_id = orders.supplier_id;
 
 Этот пример RIGHT OUTER JOIN возвращает все строки из таблицы orders и только те строки 
 из таблицы suppliers, где объединяемые поля равны.
@@ -243,12 +219,10 @@ order_id             supplier_id          order_date
 
 Запустим MySQL запрос SELECT (который содержит RIGHT OUTER JOIN):
 
-***************************************************************************************
-SELECT orders.order_id, orders.order_date, suppliers.supplier_name
-FROM suppliers
-RIGHT OUTER JOIN orders
-ON suppliers.supplier_id = orders.supplier_id;
-***************************************************************************************
+    SELECT orders.order_id, orders.order_date, suppliers.supplier_name
+    FROM suppliers
+    RIGHT OUTER JOIN orders
+    ON suppliers.supplier_id = orders.supplier_id;
 
 Результат будет выглядеть следующим образом:
 
@@ -262,42 +236,36 @@ order_id   order_date    supplier_name
 таблице suppliers нет.
 
 
-!!! ****** PostgreSQL FULL OUTER JOIN ("Полное пересечение") ******* !!!
+### !!! ****** PostgreSQL FULL OUTER JOIN ("Полное пересечение") ******* !!!
 
 PostgreSQL FULL OUTER JOIN. Этот тип соединения возвращает все строки из левой таблицы и 
 правой таблицы с NULL - значениями в месте, где условие соединения не выполняется.
 
 Синтаксис для PostgreSQL FULL OUTER JOIN:
-***************************************************************************************
-SELECT columns
 
--- Левая таблица
-FROM table1
+    SELECT columns
+    -- Левая таблица
+    FROM table1
+    -- Правая таблица
+    FULL OUTER JOIN table2
+    ON table1.column = table2.column;
 
--- Правая таблица
-FULL OUTER JOIN table2
-
-ON table1.column = table2.column;
-***************************************************************************************
-
-!!! Если представить две таблицы table1 (Левая) и table2 (Правая) в виде равных кругов, 
+**!!! Если представить две таблицы table1 (Левая) и table2 (Правая) в виде равных кругов, 
 которые пересекаются между собой, то зона их пересечения будет походить на двояковыпуклую 
 линзу. Если эту зону пересечения закрасить для наглядности, то это и будет результат 
 работы простого INNER JOIN, а если к этой зоне добавить еще и оставшуюся часть table 2 
 "Правой" таблицы и оставшуюся часть table 1 "Левой" таблицы, то вся эта закрашеная область
 похожая на прекрасную женскую грудь в узком декольте и будет зона пересечения по правилу 
-PostgreSQL FULL OUTER JOIN пересечения двух таблиц !!!
+PostgreSQL FULL OUTER JOIN пересечения двух таблиц !!!**
 
 PostgreSQL FULL OUTER JOIN запрос будет возвращать все записи из table1 и table2.
 
 Пример в PostgreSQL :
 
-***************************************************************************************
-SELECT suppliers.supplier_id, suppliers.supplier_name, orders.order_date
-FROM suppliers
-FULL OUTER JOIN orders
-ON suppliers.supplier_id = orders.supplier_id;
-***************************************************************************************
+    SELECT suppliers.supplier_id, suppliers.supplier_name, orders.order_date
+    FROM suppliers
+    FULL OUTER JOIN orders
+    ON suppliers.supplier_id = orders.supplier_id;
 
 Этот пример FULL OUTER JOIN будет возвращать все строки из таблицы suppliers и все строки 
 из таблицы orders и всякий раз, когда условие соединения не выполняется, то поля в 
@@ -327,12 +295,10 @@ order_id    supplier_id       order_date
 
 Формируем SQL запрос (который содержит FULL OUTER JOIN):
 
-***************************************************************************************
-SELECT suppliers.supplier_id, suppliers.supplier_name, orders.order_date
-FROM suppliers
-FULL OUTER JOIN orders
-ON suppliers.supplier_id = orders.supplier_id;
-***************************************************************************************
+    SELECT suppliers.supplier_id, suppliers.supplier_name, orders.order_date
+    FROM suppliers
+    FULL OUTER JOIN orders
+    ON suppliers.supplier_id = orders.supplier_id;
 
 Результат запроса будет выглядеть так:
 
