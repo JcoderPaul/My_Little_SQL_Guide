@@ -57,10 +57,11 @@ MySQL INNER JOIN будет возвращать записи, где table1 и 
 У нас есть еще одна таблица orders с тремя полями (order_id, supplier_id и order_date) 
 и данными:
 
-order_id        supplier_id        order_date
-500125          10000              05.05.2015
-500126          10001              08.02.2016
-500127          10004              06.01.2017
+| order_id | supplier_id | order_date |
+|----------|-------------|------------|
+| 500125   | 10000       | 05.05.2015 |
+| 500126   | 10001       | 08.02.2016 |
+| 500127   | 10004       | 06.01.2017 |
 
 Формируем MySQL запрос SELECT (который содержит INNER JOIN):
 
@@ -71,9 +72,10 @@ order_id        supplier_id        order_date
 
 Наш результирующий набор будет выглядеть следующим образом:
 
-supplier_id     name              order_date
-10000           IBM               05.05.2015
-10001           Hewlett Packard	  08.02.2016
+| supplier_id | name            | order_date |
+|-------------|-----------------|------------|
+| 10000       | IBM             | 05.05.2015 |
+| 10001       | Hewlett Packard | 08.02.2016 |
 
 Строки для Microsoft и NVIDIA из таблицы suppliers будут опущены, так как значения 
 supplier_id 10002 и 10003 не существует в обеих таблицах. Строка order_id 500127 из 
@@ -130,17 +132,19 @@ MySQL LEFT OUTER JOIN возвращает все строки из таблиц
 
 У нас есть таблица suppliers с полями (supplier_id и supplier_name) и данными:
 
-supplier_id      supplier_name
-10000            IBM
-10001            Hewlett Packard
-10002            Microsoft
-10003            NVIDIA
+| supplier_id | supplier_name   |
+|-------------|-----------------|
+| 10000       | IBM             |
+| 10001       | Hewlett Packard |
+| 10002       | Microsoft       |
+| 10003       | NVIDIA          |
 
 И таблица orders с полями (order_id, supplier_id и order_date) и данными:
 
-order_id            supplier_id         order_date
-500125              10000               05.05.2015
-500126              10001               08.02.2016
+| order_id | supplier_id | order_date |
+|----------|-------------|------------|
+| 500125   | 10000       | 05.05.2015 |
+| 500126   | 10001       | 08.02.2016 |
 
 Выполним MySQL запрос SELECT (который содержит LEFT OUTER JOIN):
 
@@ -151,11 +155,12 @@ order_id            supplier_id         order_date
 
 Результирующий набор будет следующим:
 
-supplier_id       name                  order_date
-10000             IBM                   05.05.2015
-10001             Hewlett Packard       08.02.2016
-10002             Microsoft             null
-10003             NVIDIA                null
+| supplier_id | name            | order_date |
+|-------------|-----------------|------------|
+| 10000       | IBM             | 05.05.2015 |
+| 10001       | Hewlett Packard | 08.02.2016 |
+| 10002       | Microsoft       | null       |
+| 10003       | NVIDIA          | null       | 
 
 Строки Microsoft и NVIDIA будут включены, так как был использован LEFT OUTER JOIN. 
 Однако поле order_date для этих записей содержит значение NULL.
@@ -206,16 +211,18 @@ RIGHT/LEFT OUTER JOIN. Меняя таблицы местами в JOIN запр
 
 У нас есть таблица suppliers с полями (supplier_id и supplier_name) и данными:
 
-supplier_id      supplier_name
-10000            Apple
-10001            Google
+| supplier_id | supplier_name |
+|-------------|---------------|
+| 10000       | Apple         | 
+| 10001       | Google        |
 
 И таблица orders с полями (order_id, supplier_id и order_date) и записями:
 
-order_id             supplier_id          order_date
-500125               10000                12.05.2016
-500126               10001                14.05.2016
-500127               10002                18.05.2016
+| order_id | supplier_id | order_date |
+|----------|-------------|------------|
+| 500125   | 10000       | 12.05.2016 |
+| 500126   | 10001       | 14.05.2016 |
+| 500127   | 10002       | 18.05.2016 |
 
 Запустим MySQL запрос SELECT (который содержит RIGHT OUTER JOIN):
 
@@ -226,10 +233,11 @@ order_id             supplier_id          order_date
 
 Результат будет выглядеть следующим образом:
 
-order_id   order_date    supplier_name
-500125     12.05.2016    Apple
-500126     14.05.2016    Google
-500127     18.05.2016    null
+| order_id | order_date | supplier_name |
+|----------|------------|---------------|
+| 500125   | 12.05.2016 | Apple         |
+| 500126   | 14.05.2016 | Google        |
+| 500127   | 18.05.2016 | null          |
 
 Строка для order_id 500127 будет включена, так как был использован RIGHT OUTER JOINS. 
 Однако поле supplier_name для этой записи содержит значение NULL, так как данных в 
@@ -280,18 +288,20 @@ PostgreSQL FULL OUTER JOIN запрос будет возвращать все �
 
 У нас таблица suppliers с полями (supplier_id и supplier_name) и записями:
 
-supplier_id    supplier_name
-10000          IBM
-10001          Hewlett Packard
-10002          Microsoft
-10003          NVIDIA
+| supplier_id | supplier_name   |
+|-------------|-----------------| 
+| 10000       | IBM             |
+| 10001       | Hewlett Packard |
+| 10002       | Microsoft       |
+| 10003       | NVIDIA          |
 
 И вторая таблица с именем orders и полями (order_id, supplier_id и order_date):
 
-order_id    supplier_id       order_date
-500125      10000             10.04.2019
-500126      10001             20.04.2019
-500127      10004             30.04.2019
+| order_id | supplier_id | order_date |
+|----------|-------------|------------|
+| 500125   | 10000       | 10.04.2019 |
+| 500126   | 10001       | 20.04.2019 |
+| 500127   | 10004       | 30.04.2019 |
 
 Формируем SQL запрос (который содержит FULL OUTER JOIN):
 
