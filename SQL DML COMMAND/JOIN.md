@@ -313,13 +313,13 @@ PostgreSQL FULL OUTER JOIN запрос будет возвращать все �
 
 Результат запроса будет выглядеть так:
 
-supplier_id  |  supplier_name  | order_date
-----------------------------------------------
-10000        | IBM             | 10.04.2019
-10001        | Hewlett Packard | 20.04.2019
-10002        | Microsoft       | 
-10003        | NVIDIA          |
-             |                 | 30.04.2019
+| supplier_id  |  supplier_name  | order_date |
+|---------------------------------------------|
+| 10000        | IBM             | 10.04.2019 |
+| 10001        | Hewlett Packard | 20.04.2019 |
+| 10002        | Microsoft       |            |
+| 10003        | NVIDIA          |            |
+|              |                 | 30.04.2019 |
 
 Строки для 'Microsoft' и 'NVIDIA' будут включены, поскольку использовался FULL OUTER JOIN. 
 Однако поле order_date для этих записей содержит пустое значение. Строка для supplier_id 10004 
