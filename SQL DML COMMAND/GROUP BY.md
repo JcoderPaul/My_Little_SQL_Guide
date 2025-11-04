@@ -1,25 +1,19 @@
-****** SQL оператор GROUP BY ******
+### SQL оператор GROUP BY
 
 SQL оператор GROUP BY можно использовать в операторе SELECT для сбора данных 
 по нескольким записям и группировки результатов по одному или нескольким столбцам.
 
 Синтаксис оператора GROUP BY в SQL:
 
-***********************************************************************************
-SELECT expression1, expression2, ... expression_n,
-
-aggregate_function (aggregate_expression)
-
-FROM tables
-
-[WHERE conditions]
-
-GROUP BY expression1, expression2, ... expression_n
-
-[ORDER BY expression [ ASC | DESC ]];
-***********************************************************************************
+		SELECT expression1, expression2, ... expression_n,
+		aggregate_function (aggregate_expression)
+		FROM tables
+		[WHERE conditions]
+		GROUP BY expression1, expression2, ... expression_n
+		[ORDER BY expression [ ASC | DESC ]];
 
 Параметры:
+
 - expression1, expression2, ... expression_n - выражения, которые не инкапсулированы 
                                                в агрегатную функцию и должны быть 
                                                включены в GROUP BY в конце SQL-запроса.
@@ -38,38 +32,36 @@ GROUP BY expression1, expression2, ... expression_n
 - DESC - необязательный. DESC сортирует результирующий набор в порядке убывания 
          по expression.
 
-****** Использование GROUP BY с функцией SUM ******
+---
+### Использование GROUP BY с функцией SUM
 
 Допустим, у нас есть таблица employees со следующими полями: employee_number, first_name,
                                                              last_name, salary, dept_id.
 
 Формируем SQL запрос:
 
-***********************************************************************************
-SELECT dept_id, 
-SUM(salary) AS total_salaries
-FROM employees
-GROUP BY dept_id;
-***********************************************************************************
+		SELECT dept_id, 
+		SUM(salary) AS total_salaries
+		FROM employees
+		GROUP BY dept_id;
 
 В данном примере мы использовали функцию SUM, чтобы сложить все зарплаты для каждого 
 dept_id, результатам SUM(salary) указали псевдоним "total_salaries". Поскольку dept_id 
 не инкапсулирован в функцию SUM, он должен быть указан в предложении GROUP BY. 
 
-****** Использование GROUP BY с функцией COUNT *******
+---
+### Использование GROUP BY с функцией COUNT
 
 У нас есть таблица products со следующими полями: product_id, product_name, category_id
 
 Делаем SQL запрос:
 
-***********************************************************************************
-SELECT category_id, 
-COUNT(*) AS total_products
-FROM products
-WHERE category_id IS NOT NULL
-GROUP BY category_id
-ORDER BY category_id;
-***********************************************************************************
+		SELECT category_id, 
+		COUNT(*) AS total_products
+		FROM products
+		WHERE category_id IS NOT NULL
+		GROUP BY category_id
+		ORDER BY category_id;
 
 Тут мы использовали функцию COUNT для вычисления количества total_products для каждого 
 category_id, и указали псевдоним "total_products" как результаты функции COUNT. Мы 
@@ -77,37 +69,35 @@ category_id, и указали псевдоним "total_products" как рез
 предложении WHERE. Поскольку category_id не инкапсулирован в функции COUNT, он должен 
 быть указан в предложении GROUP BY.
 
-****** Использование GROUP BY с функцией MIN ******
+---
+### Использование GROUP BY с функцией MIN
 
 Снова используем таблицу employees с полями: employee_number, first_name, 
 					     last_name, salary, dept_id.
 
 Формируем SQL запрос:
 
-***********************************************************************************
-SELECT dept_id, 
-MIN(salary) AS lowest_salary
-FROM employees
-GROUP BY dept_id;
-***********************************************************************************
+		SELECT dept_id, 
+		MIN(salary) AS lowest_salary
+		FROM employees
+		GROUP BY dept_id;
 
 Функция MIN, вернет самое минимальное значение salary для каждого dept_id, мы присвоили 
 результатам функции MIN псевдоним "lowest_salary". Поскольку dept_id не инкапсулирован 
 в функцию MIN, он должен быть указан в предложении GROUP BY.
 
-****** Использование GROUP BY с функцией MAX ******
+---
+### Использование GROUP BY с функцией MAX
 
 Воспользуемся таблицей employees, и найдем самую максимальную зарплату для 
 каждого dept_id, поля теже: employee_number, first_name, last_name, salary, dept_id.
 
 Формируем SQL запрос:
 
-***********************************************************************************
-SELECT dept_id,
-MAX(salary) AS highest_salary
-FROM employees
-GROUP BY dept_id;
-***********************************************************************************
+		SELECT dept_id,
+		MAX(salary) AS highest_salary
+		FROM employees
+		GROUP BY dept_id;
 
 Функция MAX, вернет самое максимальное значение salary для каждого dept_id. Мы присвоили 
 псевдоним "highest_salary" результату функции MAX. Столбец dept_id должен быть указан в 
