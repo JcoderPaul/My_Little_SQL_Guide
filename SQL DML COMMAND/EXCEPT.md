@@ -1,4 +1,4 @@
-****** SQL оператор EXCEPT ******
+### SQL оператор EXCEPT
 
 SQL оператор EXCEPT используется для возврата всех строк в первом операторе 
 SELECT, которые не возвращаются вторым оператором SELECT. Каждый оператор 
@@ -14,7 +14,9 @@ SELECT будет определять набор данных. Оператор
 Запрос EXCEPT вернет записи в заштрихованной области. Это записи, которые 
 существуют в наборе данных "Левая таблица", а не в наборе данных "Правая таблица".
 
-!!! ВНИМАНИЕ !!!
+---
+**!!! ВНИМАНИЕ !!!**
+
 Каждый оператор SELECT в запросе EXCEPT должен иметь одинаковое количество полей 
 в наборах результатов с одинаковыми типами данных.
 
@@ -23,91 +25,81 @@ SELECT будет определять набор данных. Оператор
 
 Для таких баз данных, как Oracle, используйте оператор MINUS для выполнения этого 
 типа запроса.
-!!! ВНИМАНИЕ !!!
 
+---
 Синтаксис для оператора EXCEPT в SQL:
 
-**************************************************************************************
-SELECT expression1, expression2, ... expression_n
-
-FROM tables
-
-[WHERE conditions]
-
-EXCEPT
-
-SELECT expression1, expression2, ... expression_n
-
-FROM tables
-
-[WHERE conditions];
-**************************************************************************************
+           SELECT expression1, expression2, ... expression_n
+           FROM tables
+           [WHERE conditions]
+           EXCEPT
+           SELECT expression1, expression2, ... expression_n
+           FROM tables
+           [WHERE conditions];
 
 Параметры:
+
 - expression1, expression2, expression_n - cтолбцы или расчеты, которые мы хотим получить.
 - tables - таблицы, из которых мы хотим получить записи. В запросе FROM должна быть указана 
            хотя бы одна таблица.
 - WHERE conditions - необязательный. Это условия, которые должны быть выполнены для 
                      выбора записей.
 
-!!! ВНИМАНИЕ !!!
+---
+**!!! ВНИМАНИЕ !!!**
 В обоих операторах SELECT должно быть одинаковое количество выражений.
 Соответствующие выражения должны иметь одинаковый тип данных в SELECT 
 запросе. 
 
 Например: expression1 должен иметь одинаковый тип данных как в первом, 
 так и во втором операторе SELECT.
-!!! ВНИМАНИЕ !!!
 
-****** Использование EXCEPT с одним выражением ******
+---
+### Использование EXCEPT с одним выражением
 
 Оператор EXCEPT в SQL, который возвращает одно поле с одинаковым типом данных:
 
-**************************************************************************************
-SELECT product_id
-FROM products
-EXCEPT
-SELECT product_id
-FROM inventory;
-**************************************************************************************
+           SELECT product_id
+           FROM products
+           EXCEPT
+           SELECT product_id
+           FROM inventory;
 
 В данном случае при использовании EXCEPT возвращаются все значения product_id, которые 
 находятся в таблице products, а не в таблице inventory. Это означает, что если значение 
 product_id существовало в таблице products, а также в таблице inventory, то product_id 
 не будет отображаться в результатах запроса EXCEPT.
 
-****** Использование EXCEPT с несколькими выражениями ******
+---
+### Использование EXCEPT с несколькими выражениями
 
 Пример использования запроса EXCEPT в SQL, который возвращает более одного столбца:
 
-**************************************************************************************
-SELECT contact_id, last_name, first_name
-FROM contacts
-WHERE last_name = 'Bieber'
-EXCEPT
-SELECT customer_id, last_name, first_name
-FROM customers
-WHERE customer_id > 45;
-**************************************************************************************
+           SELECT contact_id, last_name, first_name
+           FROM contacts
+           WHERE last_name = 'Bieber'
+           EXCEPT
+           SELECT customer_id, last_name, first_name
+           FROM customers
+           WHERE customer_id > 45;
 
 В этом примере EXCEPT запрос вернет записи из таблицы contacts со значениями contact_id, 
 last_name и first_name, которые не совпадают со значениями customer_id, last_name и 
 first_name в таблице customers.
 
-****** Использование EXCEPT с ORDER BY ******
+---
+### Использование EXCEPT с ORDER BY
 
 Применение оператора ORDER BY в запросе EXCEPT в SQL:
 
-**************************************************************************************
-SELECT supplier_id, supplier_name
-FROM suppliers
-WHERE supplier_id < 30
-EXCEPT
-SELECT company_id, company_name
-FROM companies
-WHERE state = 'Florida'
-ORDER BY 2;
-**************************************************************************************
+           SELECT supplier_id, supplier_name
+           FROM suppliers
+           WHERE supplier_id < 30
+           EXCEPT
+           SELECT company_id, company_name
+           FROM companies
+           WHERE state = 'Florida'
+           ORDER BY 2;
 
 Результатом EXCEPT будет следующий вывод: поскольку имена столбцов в двух операторах SELECT 
 различаются, более выгодно ссылаться на столбцы в предложении ORDER BY по их положению в 
