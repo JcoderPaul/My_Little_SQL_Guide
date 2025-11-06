@@ -42,7 +42,7 @@
 - [JOIN](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/JOIN.md) - Соединение таблиц ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/MySQL/JOIN%20and%20GROUP%20BY.sql)),([PostgreSQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/PostgreSQL/JOINs.sql));
 - [GROUP BY](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/GROUP%20BY.md) - Группировать по одному или нескольким столбцам ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/MySQL/GROUP%20and%20HAVING.sql));
 - [HAVING](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/HAVING.md) - Ограничить группы возвращаемых строк ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/MySQL/GROUP%20and%20HAVING.sql)),([PostgreSQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/PostgreSQL/HAVING.sql));
-- [EXCEPT](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/EXCEPT.txt) - Набор результатов одного минус набор результатов другого;
+- [EXCEPT](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/EXCEPT.md) - Набор результатов одного минус набор результатов другого;
 - TRUNCATE TABLE - Удалить все записи из таблицы (без отката);
 - INTERSECT - Пересечение 2 наборов результатов;
 - MINUS - Результирующий набор одного минус результирующий набор другого;
