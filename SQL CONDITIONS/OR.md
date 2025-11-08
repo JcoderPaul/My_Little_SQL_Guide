@@ -1,4 +1,4 @@
-****** SQL условие OR ******
+### SQL условие OR
 
 SQL условие OR используется для проверки нескольких условий в операторе SELECT, 
 INSERT, UPDATE или DELETE. Любое из условий должно быть выполнено для выбора 
@@ -6,22 +6,19 @@ INSERT, UPDATE или DELETE. Любое из условий должно быт
 
 Синтаксис для условия OR в SQL.
 
-*************************************************************************************
-WHERE condition1
-
-OR condition2
-
-...
-
-OR condition_n;
-*************************************************************************************
+    WHERE condition1
+    OR condition2
+    ...
+    OR condition_n;
 
 Параметры: 
+
 condition1, condition2, ... condition_n - несколько условий, которые будут проверены для 
                                           каждой записи. Любое условие может быть выполнено 
                                           для включения в набор результатов.
 
-****** Использование условия OR с оператором SELECT ******
+---
+### Использование условия OR с оператором SELECT
 
 Использование условие OR в операторе SELECT для проверки нескольких условий, когда любое 
 условие должно быть выполнено для записей, которые будут выбраны. У нас есть таблица 
@@ -29,38 +26,36 @@ suppliers со следующими полями: supplier_id, supplier_name, ci
 
 Формируем запрос:
 
-*************************************************************************************
-SELECT *
-FROM suppliers
-WHERE city = 'Lansing'
-OR supplier_id = 100
-ORDER BY supplier_name;
-*************************************************************************************
+    SELECT *
+    FROM suppliers
+    WHERE city = 'Lansing'
+    OR supplier_id = 100
+    ORDER BY supplier_name;
 
 В этом примере возвращаются все suppliers, которые находятся в городе Lansing или имеют 
 supplier_id, равный 100. Поскольку * используется в операторе SELECT, то все поля из таблицы 
 suppliers появятся в наборе результатов и отсортированные.
 
-****** Использование условия OR с оператором UPDATE ******
+---
+### Использование условия OR с оператором UPDATE
 
 SQL условие OR можно использовать в SQL операторе UPDATE для проверки нескольких условий.
-Пусть у нас есть таблица customers со следующими полями: customer_id, first_name, 
-                                                         last_name, favorite_website.
+Пусть у нас есть таблица customers со следующими полями: customer_id, first_name, last_name, favorite_website.
+
 Формируем запрос:
 
-*************************************************************************************
-UPDATE customers
-SET favorite_website = 'Google.com'
-WHERE customer_id = 5000
-OR last_name = 'Cruise'
-OR first_name = 'Johnny';
-*************************************************************************************
+    UPDATE customers
+    SET favorite_website = 'Google.com'
+    WHERE customer_id = 5000
+    OR last_name = 'Cruise'
+    OR first_name = 'Johnny';
 
 В данном случае будут обновлены все значения favourite_website в таблице customers 
 до/на google.com, где customer_id равно 5000 или last_name это 'Cruise' или first_name 
 это 'Johnny'.
 
-****** Использование условие OR с оператором DELETE ******
+---
+### Использование условие OR с оператором DELETE
 
 Использование OR в операторе DELETE для проверки любого из условий, которые должны быть 
 выполнены до удаления записи. У нас есть таблица products со следующими полями:
@@ -68,12 +63,10 @@ product_id, product_name, category_id
 
 Формируем PgSQL запрос:
 
-*************************************************************************************
-DELETE FROM products
-WHERE product_name = 'Pear'
-OR product_name = 'Apple'
-OR category_id = 25;
-*************************************************************************************
+    DELETE FROM products
+    WHERE product_name = 'Pear'
+    OR product_name = 'Apple'
+    OR category_id = 25;
 
 В данном случае будут удалены все записи из таблицы products, где product_name - Pear, 
 product_name - Apple или category_id =25.
