@@ -51,7 +51,7 @@
 ### **[SQL условия (Булева логика)](https://github.com/JcoderPaul/My_Little_SQL_Guide/tree/master/SQL%20CONDITIONS)** 
 
 - [AND](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/AND.md) - 2 или более условия, которые должны быть выполнены ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/MySQL/LIKE_AND_OR.sql));
-- [OR](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/OR.txt) - Любое из условий выполнено ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/MySQL/LIKE_AND_OR.sql));
+- [OR](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/OR.md) - Любое из условий выполнено ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/MySQL/LIKE_AND_OR.sql));
 - AND И OR - Сочетание условий AND И OR (MySQL пример);
 - [LIKE](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/LIKE.txt) - Используйте подстановочные знаки в предложении WHERE ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/MySQL/LIKE_AND_OR.sql));
 - [IN](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/IN.txt) - Соответствие выражения списку значений ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/MySQL/BETWEEN%20ond%20IN.sql));
