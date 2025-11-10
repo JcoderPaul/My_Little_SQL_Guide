@@ -54,7 +54,7 @@
 - [OR](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/OR.md) - Любое из условий выполнено ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/MySQL/LIKE_AND_OR.sql));
 - AND И OR - Сочетание условий AND И OR (MySQL пример);
 - [LIKE](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/LIKE.md) - Используйте подстановочные знаки в предложении WHERE ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/MySQL/LIKE_AND_OR.sql));
-- [IN](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/IN.txt) - Соответствие выражения списку значений ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/MySQL/BETWEEN%20ond%20IN.sql));
+- [IN](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/IN.md) - Соответствие выражения списку значений ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/MySQL/BETWEEN%20ond%20IN.sql));
 - NOT - Отрицание;
 - [IS NULL](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/IS%20NULL.txt) - Проверка значения на NULL (MySQL пример);
 - [IS NOT NULL](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/IS%20NOT%20NULL.txt) - Проверка значения на NOT NULL (MySQL пример);
