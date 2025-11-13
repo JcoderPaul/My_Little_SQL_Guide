@@ -58,7 +58,7 @@
 - NOT - Отрицание;
 - [IS NULL](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/IS%20NULL.md) - Проверка значения на NULL (MySQL пример);
 - [IS NOT NULL](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/IS%20NOT%20NULL.md) - Проверка значения на NOT NULL (MySQL пример);
-- [BETWEEN](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/BETWEEN.txt) - Выборка в пределах диапазона (включительно) ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/MySQL/BETWEEN%20ond%20IN.sql));
+- [BETWEEN](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/BETWEEN.md) - Выборка в пределах диапазона (включительно) ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/MySQL/BETWEEN%20ond%20IN.sql));
 - EXISTS - Условие выполняется, если подзапрос возвращает хотя бы одну строку;
 
 ---
