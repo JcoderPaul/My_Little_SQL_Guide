@@ -56,8 +56,8 @@
 - [LIKE](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/LIKE.md) - Используйте подстановочные знаки в предложении WHERE ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/MySQL/LIKE_AND_OR.sql));
 - [IN](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/IN.md) - Соответствие выражения списку значений ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/MySQL/BETWEEN%20ond%20IN.sql));
 - NOT - Отрицание;
-- [IS NULL](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/IS%20NULL.txt) - Проверка значения на NULL (MySQL пример);
-- [IS NOT NULL](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/IS%20NOT%20NULL.txt) - Проверка значения на NOT NULL (MySQL пример);
+- [IS NULL](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/IS%20NULL.md) - Проверка значения на NULL (MySQL пример);
+- [IS NOT NULL](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/IS%20NOT%20NULL.md) - Проверка значения на NOT NULL (MySQL пример);
 - [BETWEEN](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/BETWEEN.txt) - Выборка в пределах диапазона (включительно) ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20CONDITIONS/MySQL/BETWEEN%20ond%20IN.sql));
 - EXISTS - Условие выполняется, если подзапрос возвращает хотя бы одну строку;
 
