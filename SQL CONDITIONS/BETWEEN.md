@@ -48,7 +48,7 @@ value1 и value2 (включительно).
 
 SQL запрос, в зависимости от базы данных, которую мы используем:
 
-**PgSQL***
+**PgSQL:**
 
     SELECT *
     FROM orders
@@ -56,7 +56,7 @@ SQL запрос, в зависимости от базы данных, кото
 
 Для Oracle (используйте функцию TO_DATE):
 
-**Transact-SQL**
+**Transact-SQL:**
 
     SELECT *
     FROM orders
@@ -65,7 +65,7 @@ SQL запрос, в зависимости от базы данных, кото
 
 Для MySQL и MariaDB (используйте функцию CAST):
 
-**MySQL и MariaDB**
+**MySQL и MariaDB:**
 
     SELECT *
     FROM orders
