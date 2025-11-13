@@ -1,4 +1,4 @@
-****** SQL условие IS NOT NULL ******
+### SQL условие IS NOT NULL
 
 Условие IS NOT NULL используется в SQL для проверки значения, отличного от NULL. 
 Оно возвращает TRUE, если найдено ненулевое значение, в противном случае оно 
@@ -7,14 +7,14 @@ DELETE.
 
 Синтаксис для условия IS NOT NULL в SQL:
 
-***************************************************************************************
-expression IS NOT NULL
-***************************************************************************************
+    expression IS NOT NULL
 
 Параметры:
+
 - expression - выражение для проверки значения NOT NULL.
 
-****** Использование IS NOT NULL с оператором SELECT
+---
+### Использование IS NOT NULL с оператором SELECT
 
 При проверке значения, отличного от NULL, IS NOT NULL является рекомендуемым оператором 
 сравнения для использования в SQL. Допустим у нас есть таблица products со следующими 
@@ -22,27 +22,23 @@ expression IS NOT NULL
 
 Формируем SQL запрос:
 
-***************************************************************************************
-SELECT *
-  FROM products
- WHERE category_id IS NOT NULL;
-***************************************************************************************
+    SELECT *
+    FROM products
+    WHERE category_id IS NOT NULL;
 
 В этом запросе будут возвращены все записи из таблицы products, где customer_id не содержит 
 значения NULL.
 
-****** Использование IS NOT NULL с оператором UPDATE ******
+---
+### Использование IS NOT NULL с оператором UPDATE
 
-У нас есть таблица customer со следующими полями: customer_id, first_name, last_name, 
-                                                  favorite_website.
+У нас есть таблица customer со следующими полями: customer_id, first_name, last_name, favorite_website.
 
 Формируем запрос UPDATE:
 
-***************************************************************************************
-UPDATE customers
-SET favorite_website = 'google.com'
-WHERE favorite_website IS NOT NULL;  
-***************************************************************************************
+    UPDATE customers
+    SET favorite_website = 'google.com'
+    WHERE favorite_website IS NOT NULL;  
 
 В этом примере будут обновлены все значения fav_website в таблице customer до google.com, 
 (замеены на google.com) где favourite_website содержит значение НЕ NULL. Т.е если запись в 
@@ -50,15 +46,15 @@ WHERE favorite_website IS NOT NULL;
 заменены на google.com. Если же запись в поле fav_website содержит NULL, то он так и 
 останется NULL.
 
-****** Использование IS NOT NULL с оператором DELETE ******
+---
+### Использование IS NOT NULL с оператором DELETE
 
 У нас есть таблица orders и следующими полями: order_id, customer_id, order_date.
 Формируем следующий запрос с DELETE:
 
-***************************************************************************************
-DELETE FROM orders
-WHERE customer_id IS NOT NULL;
-***************************************************************************************
+    DELETE FROM orders
+    WHERE customer_id IS NOT NULL;
+
 
 В этом примере будут удалены все записи из таблицы orders, где customer_id не содержит 
 значения NULL, а те что содержат останутся.
