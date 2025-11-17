@@ -67,7 +67,7 @@
 - [COUNT](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20FUNCTIONS/COUNT.md) - Возвращает количество выражений ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20FUNCTIONS/MySQL/GROUP%20FUNCTION%20-%20COUNT.sql));
 - [SUM](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20FUNCTIONS/SUM.md) - Возвращает сумму выражения ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20FUNCTIONS/MySQL/GROUP%20FUNCTION%20-%20SUM.sql));
 - [MIN](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20FUNCTIONS/MIN.md) - Возвращает минимум выражения ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20FUNCTIONS/MySQL/GROUP%20FUNCTION%20-%20MAX%20%D0%B8%20MIN.sql));
-- [MAX](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20FUNCTIONS/MAX.txt) - Возвращает максимум выражения ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20FUNCTIONS/MySQL/GROUP%20FUNCTION%20-%20MAX%20%D0%B8%20MIN.sql));
+- [MAX](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20FUNCTIONS/MAX.md) - Возвращает максимум выражения ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20FUNCTIONS/MySQL/GROUP%20FUNCTION%20-%20MAX%20%D0%B8%20MIN.sql));
 - [AVG](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20FUNCTIONS/AVG.txt) - Возвращает среднее значение выражения ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20FUNCTIONS/MySQL/MAX_MIN_AVG.sql));
 
 ---
