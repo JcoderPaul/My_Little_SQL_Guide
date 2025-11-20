@@ -75,7 +75,7 @@
 
 - [Символьные / строчные функции](https://github.com/JcoderPaul/My_Little_SQL_Guide/tree/master/SQL%20STRING%20FUNCTIONS):
 	- [Oracle PL/SQL и MySQL](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/SQL_STRING_FUNCTIONS.md);
-	- [PostrgeSQL](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/PostgreSQL_STRING_FUNCTIONS.txt);
+	- [PostrgeSQL](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/PostgreSQL_STRING_FUNCTIONS.md);
 
 - [Дополнительные функции SQL](https://github.com/JcoderPaul/My_Little_SQL_Guide/tree/master/ADDITIONAL%20FUNCTIONS):
 	- [MySQL](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/ADDITIONAL%20FUNCTIONS/ADDITIONAL_FUNCTIONS_in_MYSQL%20.txt) ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/tree/master/ADDITIONAL%20FUNCTIONS/MySQL));
