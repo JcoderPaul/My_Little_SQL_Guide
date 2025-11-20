@@ -2,7 +2,7 @@
 
 Некоторых функций в явном виде не существует в MySQL и PostgreSQL
 
-- [CONCAT](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/CONCAT.txt) - Функция Oracle/PLSQL CONCAT позволяет соединить вместе две строки ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20CONCAT.sql)).
+- [CONCAT](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/CONCAT.md) - Функция Oracle/PLSQL CONCAT позволяет соединить вместе две строки ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20CONCAT.sql)).
 - ОПЕРАТОР КОНКАТЕНАЦИИ || - Oracle/PLSQL оператор конкатенации || позволяет 
                            объединить две или более строк вместе.
 - [INSTR](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/INSTR.txt) - Oracle/PLSQL функция INSTR возвращает n-е вхождение подстроки в строке ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20INSTR.sql)).
