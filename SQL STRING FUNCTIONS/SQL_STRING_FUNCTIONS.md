@@ -5,7 +5,7 @@
 - [CONCAT](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/CONCAT.md) - Функция Oracle/PLSQL CONCAT позволяет соединить вместе две строки ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20CONCAT.sql)).
 - ОПЕРАТОР КОНКАТЕНАЦИИ || - Oracle/PLSQL оператор конкатенации || позволяет 
                            объединить две или более строк вместе.
-- [INSTR](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/INSTR.txt) - Oracle/PLSQL функция INSTR возвращает n-е вхождение подстроки в строке ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20INSTR.sql)).
+- [INSTR](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/INSTR.md) - Oracle/PLSQL функция INSTR возвращает n-е вхождение подстроки в строке ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20INSTR.sql)).
 
 - INSTR2 - Функция Oracle/PLSQL INSTR2 возвращает вхождение подстроки в строку, 
          используя UCS2 кодовые точки.
