@@ -16,7 +16,7 @@
 - INSTRC - Функция Oracle/PLSQL INSTRC возвращает вхождение подстроки в строку, 
          используя Unicode полные символов.
 
-- [LENGTH](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/LENGTH.txt) - Функция Oracle/PLSQL LENGTH возвращает длину указанной строки ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20LENGTH.sql)).
+- [LENGTH](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/LENGTH.md) - Функция Oracle/PLSQL LENGTH возвращает длину указанной строки ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20LENGTH.sql)).
 
 - LENGTH2 - Функция Oracle/PLSQL LENGTH2 возвращает длину указанной строки, 
           используя UCS2 кодовые точки.
