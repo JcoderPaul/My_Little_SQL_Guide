@@ -27,7 +27,7 @@
 - LENGTHC - Функция Oracle/PLSQL LENGTHC возвращает длину указанной строки, 
           используя полные символы Unicode.
 
-- [LOWER](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/LOWER.txt) - Функция Oracle/PLSQL LOWER преобразует все символы в заданной строке в 
+- [LOWER](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/LOWER.md) - Функция Oracle/PLSQL LOWER преобразует все символы в заданной строке в 
         нижний регистр. Если есть символы в строке, которые не являются буквами, 
         они не влияют на эту функцию ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20Lower%20and%20Upper.sql)) .
 - [LPAD](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/LPAD.txt) - Функция Oracle/PLSQL LPAD добавляет с левой части строки определенный 
