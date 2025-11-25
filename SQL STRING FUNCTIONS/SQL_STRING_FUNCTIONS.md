@@ -30,7 +30,7 @@
 - [LOWER](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/LOWER.md) - Функция Oracle/PLSQL LOWER преобразует все символы в заданной строке в 
         нижний регистр. Если есть символы в строке, которые не являются буквами, 
         они не влияют на эту функцию ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20Lower%20and%20Upper.sql)) .
-- [LPAD](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/LPAD.txt) - Функция Oracle/PLSQL LPAD добавляет с левой части строки определенный 
+- [LPAD](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/LPAD.md) - Функция Oracle/PLSQL LPAD добавляет с левой части строки определенный 
        набор символов (при не нулевом string1) ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20Lpad%20and%20Rpad.sql)).
 - [REPLACE](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/REPLACE.txt) - Функция Oracle/PLSQL REPLACE заменяет последовательность символов в строке другим 
           набором символов ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20REPLACE.sql)).
