@@ -34,7 +34,7 @@
        набор символов (при не нулевом string1) ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20Lpad%20and%20Rpad.sql)).
 - [REPLACE](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/REPLACE.md) - Функция Oracle/PLSQL REPLACE заменяет последовательность символов в строке другим 
           набором символов ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20REPLACE.sql)).
-- [RPAD](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/RPAD.txt) - Функция Oracle/PLSQL RPAD дополняет с правой части строки определенный набор 
+- [RPAD](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/RPAD.md) - Функция Oracle/PLSQL RPAD дополняет с правой части строки определенный набор 
        символов (при не нулевом string1) ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20Lpad%20and%20Rpad.sql)).
 - [SUBSTR](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/SUBSTR.txt) - Функция Oracle/PLSQL SUBSTR позволяет извлекать подстроку из строки ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20SUBSTR.sql)).
 - [TRIM](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/TRIM.txt) - Функция Oracle / PLSQL TRIM удаляет все указанные символы с начала или 
