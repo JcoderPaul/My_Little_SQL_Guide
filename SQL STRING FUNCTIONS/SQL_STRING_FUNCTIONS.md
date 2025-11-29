@@ -37,7 +37,7 @@
 - [RPAD](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/RPAD.md) - Функция Oracle/PLSQL RPAD дополняет с правой части строки определенный набор 
        символов (при не нулевом string1) ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20Lpad%20and%20Rpad.sql)).
 - [SUBSTR](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/SUBSTR.md) - Функция Oracle/PLSQL SUBSTR позволяет извлекать подстроку из строки ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20SUBSTR.sql)).
-- [TRIM](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/TRIM.txt) - Функция Oracle / PLSQL TRIM удаляет все указанные символы с начала или 
+- [TRIM](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/TRIM.md) - Функция Oracle / PLSQL TRIM удаляет все указанные символы с начала или 
        окончания строки ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20TRIM.sql)).
 - [UPPER](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/UPPER.txt) - Функция Oracle/PLSQL UPPER преобразует все символы строки в верхний регистр ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20Lower%20and%20Upper.sql)). 
         Если есть символы в строке, которые не являются буквами, они не влияют на эту функцию.
