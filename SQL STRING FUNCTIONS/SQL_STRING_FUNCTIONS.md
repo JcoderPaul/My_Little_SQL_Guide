@@ -39,7 +39,7 @@
 - [SUBSTR](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/SUBSTR.md) - Функция Oracle/PLSQL SUBSTR позволяет извлекать подстроку из строки ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20SUBSTR.sql)).
 - [TRIM](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/TRIM.md) - Функция Oracle / PLSQL TRIM удаляет все указанные символы с начала или 
        окончания строки ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20TRIM.sql)).
-- [UPPER](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/UPPER.txt) - Функция Oracle/PLSQL UPPER преобразует все символы строки в верхний регистр ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20Lower%20and%20Upper.sql)). 
+- [UPPER](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/UPPER.md) - Функция Oracle/PLSQL UPPER преобразует все символы строки в верхний регистр ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/MySQL/FUNCTIONS%20-%20Lower%20and%20Upper.sql)). 
         Если есть символы в строке, которые не являются буквами, они не влияют на эту функцию.
 
 - ASCII - Функция Oracle/PLSQL ASCII возвращает числовое представление 
