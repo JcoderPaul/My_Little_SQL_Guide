@@ -78,7 +78,7 @@
 	- [PostrgeSQL](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20STRING%20FUNCTIONS/PostgreSQL_STRING_FUNCTIONS.md);
 
 - [Дополнительные функции SQL](https://github.com/JcoderPaul/My_Little_SQL_Guide/tree/master/ADDITIONAL%20FUNCTIONS):
-	- [MySQL](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/ADDITIONAL%20FUNCTIONS/ADDITIONAL_FUNCTIONS_in_MYSQL%20.txt) ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/tree/master/ADDITIONAL%20FUNCTIONS/MySQL));
+	- [MySQL](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/ADDITIONAL%20FUNCTIONS/ADDITIONAL_FUNCTIONS_in_MYSQL%20.md) ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/tree/master/ADDITIONAL%20FUNCTIONS/MySQL));
 
 - [Функции Даты / Времени](https://github.com/JcoderPaul/My_Little_SQL_Guide/tree/master/DATA%20FUNCTIONS):
 	- [MySQL](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/DATA%20FUNCTIONS/DATA_and_TIME_in_MYSQL.txt) ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/tree/master/DATA%20FUNCTIONS/MySQL));
