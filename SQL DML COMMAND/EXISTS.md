@@ -25,7 +25,7 @@ SQL условие EXISTS используется в сочетании с по
 используют условие EXISTS.
 
 ---
-****** Использование условия EXISTS с оператором SELECT ******
+### Использование условия EXISTS с оператором SELECT
 
 У нас есть таблица customers со следующими полями: customer_id, first_name, 
                                                    last_name, favorite_website.
@@ -47,7 +47,7 @@ orders с тем же customer_id.
 customer_id имеется в таблице orders, они будут выведены на экран (получены).
 
 ---
-****** Использование EXISTS с оператором UPDATE ******
+### Использование EXISTS с оператором UPDATE
 
 У нас есть таблица products со следующими полями: product_id, product_name, category_id.
 И таблица с именем summary_data с полями: product_id, current_category.
@@ -67,7 +67,7 @@ customer_id имеется в таблице orders, они будут выве�
 данными category_id из таблицы products, где значения product_id совпадают. 
 
 ---
-****** Использование условия EXISTS с оператором DELETE ******
+### Использование условия EXISTS с оператором DELETE
 
 У нас есть таблица customer со следующими полями: customer_id, first_name, last_name, favorite_website.
 И таблица orders с полями: order_id, customer_id, order_date.
@@ -86,7 +86,7 @@ customer_id имеется в таблице orders, они будут выве�
 таблицах. 
 
 ---
-****** Использование NOT с условием EXISTS ******
+### Использование NOT с условием EXISTS
 
 Условие NOT можно объединить с условием EXISTS, чтобы создать условие NOT EXISTS. 
 
