@@ -43,6 +43,7 @@
 - [GROUP BY](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/GROUP%20BY.md) - Группировать по одному или нескольким столбцам ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/MySQL/GROUP%20and%20HAVING.sql));
 - [HAVING](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/HAVING.md) - Ограничить группы возвращаемых строк ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/MySQL/GROUP%20and%20HAVING.sql)),([PostgreSQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/PostgreSQL/HAVING.sql));
 - [EXCEPT](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/EXCEPT.md) - Набор результатов одного минус набор результатов другого;
+- [EXIST](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SQL%20DML%20COMMAND/EXISTS.md) - Используется в запросе с WHERE для проверки наличия хотя бы одной строки в результате подзапроса, возвращая TRUE, если строки есть, и FALS;
 - TRUNCATE TABLE - Удалить все записи из таблицы (без отката);
 - INTERSECT - Пересечение 2 наборов результатов;
 - MINUS - Результирующий набор одного минус результирующий набор другого;
