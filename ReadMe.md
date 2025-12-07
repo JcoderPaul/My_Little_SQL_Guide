@@ -88,6 +88,8 @@
 - [Числовые / математические функции SQL](https://github.com/JcoderPaul/My_Little_SQL_Guide/tree/master/NUMERIC%20FUNCTIONS):
 	- [MySQL](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/NUMERIC%20FUNCTIONS/MySQL_NUMERIC_FUNCTIONS.md) ([MySQL пример](https://github.com/JcoderPaul/My_Little_SQL_Guide/tree/master/NUMERIC%20FUNCTIONS/MySQL));
 	- [PostgreSQL](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/NUMERIC%20FUNCTIONS/PostgreSQL_NUMERIC_FUNCTIONS.md);
+- [Подзапросы SUBQUERYS](https://github.com/JcoderPaul/My_Little_SQL_Guide/blob/master/SUBQUERY%20EXAMPLE/SUBQUERYS.md):
+	- [MySQL примеры](https://github.com/JcoderPaul/My_Little_SQL_Guide/tree/master/SUBQUERY%20EXAMPLE/MySQL);
 
 ---
 ### **[Примеры решения задач по PostgreSQL](https://github.com/JcoderPaul/My_Little_SQL_Guide/tree/master/SQL%20DML%20COMMAND/PostgreSQL_HW)**
